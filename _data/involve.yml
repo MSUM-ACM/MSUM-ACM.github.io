@@ -1,19 +1,25 @@
 - col:
   - title: "Create a workshop"
     description: "We are always looking for new workshop ideas and for others to step up to the plate and present the workshop.  This is a great way to build communitcation skills which are absolutely vital for your future career."
+
   - title: "Create a presentation"
     description: "Found a topic that sparks your interest? Share it with your fellow students.  Who knows maybe another student is just as interested in the topic as you are and would be interested in doing furthur reserch with you.  Undergrad research is one of the best resume builders that you can obtain!"
+
   - title: "Present research"
     description: "Have an idea for some possible research you would like to do? Write up a proposal of what you would like to research and present your idea to your fellow students.  Maybe a few of them would also like to help on your research team.  Major resume builder!!"
+
   - title: "Become an Officer"
     description: "Being an ACM Officer doesn't mean you have to present workshops or spend 90% of your day in the linux lab.  You take it as far as you want to go.  Contact one of the current officers about your interest and attend the meeting at the begaining of the semester where we vote for officers."
 
 - col:
   - title: "Join the Web Team!"
     description: "The ACM's website doesn't maintain itself! Even if you don't have any experiance in webcoding, you can still make huge contributions to the project! We need people willing to: write content for the website like the descriptions for the workshops, take notes during meetings and add it to the website so if others missed the meeting they can still be informed about what we covered, help develop and debug sections of the website.  Notes and descriptions do not have to be long, could even be bullet points for the notes, but your efforts would go a long way in helping us out.  What ever you can help out with will also be a learning opportunity for you! -webmeister"
+
   - title: "Software Development"
     description: "The ACM has a few ideas for some software they would like to create.  We are also always open to ideas, so if you have a peice of software that you think would be awesome for the organization, then let us know!  Even if its just designing a game that utilizes Git commands to help students learn how to use the source control software Git.  Another awesome resume builder! Grab a few friends and spend a weekend making software for a purpose!"
+
   - title: "Join a study team"
     description: "Always wanted to learn a certain language that isn't taught here at MSUM? Grab a few friends and inform the organization of what you are doing.  Send us updates on your progress every now and then so we can hear of your accomplishments!"
+
   - title: "Be a Brainstormer!"
     description: "Got ideas? Hows a robotic cell phone charger that follows you around do for a good idea?  Eh maybe not. But we are always looking for fresh new ideas for just about anything we do.  Things like workshops, additions to the website, software, projects, etc... We want to hear your ideas! "

@@ -1,14 +1,16 @@
-
 <div class="page-header">
-<h1>Get Involved!</h1>
+  <h1>Get Involved!</h1>
 </div>
+
 {% for row in site.data.involve %}
 <div class="col-sm-6">
+
   {% for item in row.col %}
   <div>
     <h4><strong>{{ item.title }}</strong></h4>
     <p>{{ item.description }}</p>
   </div>
   {% endfor %}
+
 </div>
 {% endfor %}
