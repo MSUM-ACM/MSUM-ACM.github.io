@@ -96,10 +96,6 @@ layout: default
             <h3>Articles</h3>
             <p>Articles are written by students as either homework or private research. Youc could see yours here!  Contact an officer!</p>
             <ol class="list-unstyled">
-              {% for article in site.categories.articles limit:4 %}
-              <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-              <p></p>
-              {% endfor %}
               <li><a href="{{ site.baseurl }}/articles">View all articles</a></li>
             </ol>
           </div>
@@ -107,7 +103,6 @@ layout: default
             <h3>Connect</h3>
             <ol class="list-unstyled">
               <li><a href="{{ site.data.aboutinfo.github_url }}" target="_blank">GitHub</a></li>
-              <li><a href="{{ site.data.aboutinfo.twitter_url }}" target="_blank">Twitter</a></li>
               <li><a href="{{ site.data.aboutinfo.facebook_url }}" target="_blank">Facebook</a></li>
             </ol>
           </div>
