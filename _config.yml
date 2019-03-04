@@ -2,7 +2,7 @@
 title: MSUM ACM
 baseurl: "" # the subpath of your site, e.g. /blog/
 rough: pygments
-url :   http://msumacm.org
+url :   http://msum-acm.github.io/
 permalink: /:year/:month/:day/:title
 markdown: kramdown
 timezone: America/Chicago
