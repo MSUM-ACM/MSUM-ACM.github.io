@@ -5,6 +5,9 @@ layout: page
 # ACM Planning (Spring 2019)
 
 + [Home Wiki page](https://github.com/MSUM-ACM/Planning/wiki)
++ Constitutional Amendments
+  - Reduce number of elections per year from two to one
+  - Reduce strict voting requirements from unanimous to two-thirds
 + Events
   - [Git / GitHub Workshop](https://github.com/MSUM-ACM/Planning/wiki/GitHub)
     - 2/27/2019 6:00PM
