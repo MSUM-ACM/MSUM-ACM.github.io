@@ -3,7 +3,8 @@ layout: posts
 title: "Constitution Amendments Result"
 categories: "all msum"
 subtitle: "Sponsored by MSUM ACM"
-event: false
+time: ""
+event: true
 ---
 
 ### Constitution Amendments Poll Results
