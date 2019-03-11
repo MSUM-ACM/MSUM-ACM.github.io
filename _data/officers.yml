@@ -21,3 +21,10 @@
 
     - title: "Web Master"
       name: "Heecheon Park"
+      links:
+        - link: "mailto: parkhe@mnstate.edu"
+          title: "Email Heecheon"
+          target: "_blank"
+        - link: "https://github.com/heecheon92"
+          title: "Heecheon's GitHub"
+          target: "_blank"
