@@ -2,32 +2,31 @@
 layout: page
 ---
 
-# ACM Planning (Fall 2015)
+# ACM Planning (Spring 2019)
 
 + [Home Wiki page](https://github.com/MSUM-ACM/Planning/wiki)
++ Constitutional Amendments
+  - Reduce number of elections per year from two to one
+  - Reduce strict voting requirements from unanimous to two-thirds
 + Events
-  - Welcome Pizza party - 09/17/15 ~05PM
-  - [Virtualization Workshop](https://github.com/MSUM-ACM/Planning/wiki/Virtualization) - 10/01/2015 ~05PM
-  - [Git / GitHub Workshop](https://github.com/MSUM-ACM/Planning/wiki/GitHub) - 10/08/2015 ~05PM
-  - [IDE Workshop](https://github.com/MSUM-ACM/Planning/wiki/IDE) - 10/15/2015 ~05PM
-  - [Linux Workshop](https://github.com/MSUM-ACM/Planning/wiki/Linux) - 10/22/2015 ~05PM
-  - [HERE presentation](https://github.com/MSUM-ACM/Planning/wiki/HERE-Project-Notes) - 10/27/15
-+ Projects : group projects
-  - [HERE ](https://github.com/MSUM-ACM/Planning/wiki/HERE-Project-Notes): mapping system project
+  - [Git / GitHub Workshop](https://github.com/MSUM-ACM/Planning/wiki/GitHub)
+    - 2/27/2019 6:00PM
+    - 2/28/2019 4:00PM
+  - [Myriad Mobile Presentation](https://github.com/MSUM-ACM/Companies/wiki/Myriad-Mobile)
+    - 2/27/2019 6:00PM
+    - 2/28/2019 4:00PM
+  - [Discovery Benefits Presentation](https://github.com/MSUM-ACM/Companies/wiki/Discovery-Benefits)
+    - 2/27/2019 6:00PM
+    - 2/28/2019 4:00PM
+<Projects : group projects>
 + Competitions
   - MSUM students
-    - Digit-Key (10/16/2015)
-    - MICS (04/2016)
-  - Fargo/Moorhead High School students
-    - Moorhead High School
-    - Park Christian School
-    - Fargo North High School
-    - Fargo South High School
-    - Davies High School
-    - West Fargo High School
-    - Sheyenne High
-    - Community High
-+ Workshops
+    <DigiKey>
+    <ICPC>
+    - MICS
+        - Registration Due 3/15/19
+        - Competition 4/5/19 - 4/6/19
++ Workshop References
  - [Virtualization](https://github.com/MSUM-ACM/Planning/wiki/Virtualization)
  - [Git / GitHub](https://github.com/MSUM-ACM/Planning/wiki/GitHub)
  - [IDE](https://github.com/MSUM-ACM/Planning/wiki/IDE)

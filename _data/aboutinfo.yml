@@ -1,16 +1,11 @@
 welcome_title: "Welcome to the MSUM ACM!"
 welcome_description: "Passionate about programming, games, robots, the web … ? So are we! Join the ACM and participate by writing an article about your field of expertise, teaching and learning from your fellow students in our weekly workshops or attending presentations from local tech companies and computer professionals. Click below to find out more!"
 
-
-
-
-
 #links
+dragon_central_url: "https://mnstate.campuslabs.com/engage/organization/msum_acm"
 github_url: "https://github.com/MSUM-ACM"
-twitter_url: "https://twitter.com/msumacm"
 facebook_url: "https://www.facebook.com/groups/msum.acm/"
 MSUM_url: "https://www.mnstate.edu"
-
 
 site_description: "The MSUM ACM organization's goals are to to increase the knowledge and interest in the science, design, and development of all things computer related.  We hold workshops, bring in speakers, and have organization pizza parties for an example of some of our events.  Click below to find out more!"
 planning_page: "https://github.com/MSUM-ACM/Planning"

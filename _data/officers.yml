@@ -1,0 +1,30 @@
+- col:
+    - title: "President"
+      name: "Kyle Dahn"
+      information: "Kyle is a Senior this year and works full-time at Myriad Mobile as an Android Engineer. His passions include Photography, Traveling, and sharing his knowledge."
+      links:
+        - link: "mailto: dahnky@mnstate.edu"
+          title: "Email Kyle"
+          target: "_blank"
+        - link: "https://github.com/MoonWolf125"
+          title: "Kyle's GitHub"
+          target: "_blank"
+
+    - title: "Vice President"
+      name: "Priyanka Aryal"
+
+    - title: "Secretary"
+      name: "Anisha Shrestha"
+
+    - title: "Treasurer"
+      name: "Santosh Chapagain"
+
+    - title: "Web Master"
+      name: "Heecheon Park"
+      links:
+        - link: "mailto: parkhe@mnstate.edu"
+          title: "Email Heecheon"
+          target: "_blank"
+        - link: "https://github.com/heecheon92"
+          title: "Heecheon's GitHub"
+          target: "_blank"
