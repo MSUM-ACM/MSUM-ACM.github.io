@@ -1,4 +1,4 @@
----
+A---
 layout: article
 title:  "An interview with John Schneider, founder of Fargo's MELD Workshop"
 date:   2014-02-18 11:45:50

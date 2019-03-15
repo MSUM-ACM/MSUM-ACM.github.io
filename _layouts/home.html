@@ -3,115 +3,119 @@ layout: default
 ---
 
 <div id="banner" class="jumbotron">
-      <div class="container">
-        <h1>{{ site.data.aboutinfo.welcome_title }}</h1>
-        <p>{{ site.data.aboutinfo.welcome_description }}</p>
-        <p><a class="btn btn-primary btn-lg" href="{{ site.baseurl }}/about.html" role="button">Learn more »</a></p>
-      </div>
-    </div>
+  <div class="container">
+    <h1>{{ site.data.aboutinfo.welcome_title }}</h1>
+    <p>{{ site.data.aboutinfo.welcome_description }}</p>
+    <p><a class="btn btn-primary btn-lg" href="{{ site.baseurl }}/about.html" role="button">Learn more »</a></p>
+  </div>
+</div>
 
 <div class="container">
-      <div class="blog-header">
-        <h1 class="blog-title">ACM Event Board</h1>
-        <p class="lead blog-description">Lists of events from both the School as well as from the Fargo/Moorhead Area</p>
-      </div>
+  <div class="blog-header">
+    <h1 class="blog-title">ACM Event Board</h1>
+    <p class="lead blog-description">Lists of events from both the School as well as from the Fargo/Moorhead Area</p>
+  </div>
 
-      <div class="row">
-
-        <div class="col-sm-8 blog-main">
-
-          <div class="visible-xs-block">
-          <div class="dropdown">
-
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter Posts
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+      <div class="visible-xs-block">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter Posts
             <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li class="{{ page.link1 }}"><a href="{{ site.baseurl }}/">All</a></li>
-              <li class="{{ page.link2 }}"><a href="{{ site.baseurl }}/home-MSUM.html">MSUM</a></li>
-              <li class="{{ page.link3 }}"><a href="{{ site.baseurl }}/home-FM.html">Fargo/Moorhead</a></li>
-              <li class="{{ page.link4 }}"><a href="{{ site.baseurl }}/home-National.html">National</a></li>
-            </ul>
-            • {% if page.link1 %}All{% elsif page.link2 %}MSUM{% elsif page.link3 %}Fargo/Moorhead{% elsif page.link4 %}National{% else %}All{% endif %}
-          </div>
-          <hr />
-        </div>
-
-
-          <ul class="nav nav-tabs hidden-xs">
+          <ul class="dropdown-menu">
             <li class="{{ page.link1 }}"><a href="{{ site.baseurl }}/">All</a></li>
             <li class="{{ page.link2 }}"><a href="{{ site.baseurl }}/home-MSUM.html">MSUM</a></li>
             <li class="{{ page.link3 }}"><a href="{{ site.baseurl }}/home-FM.html">Fargo/Moorhead</a></li>
             <li class="{{ page.link4 }}"><a href="{{ site.baseurl }}/home-National.html">National</a></li>
           </ul>
-
-
-            {{ content }}
-            <nav>
-              <ul class="pager">
-                <li><a href="{{ site.baseurl }}/events.html">View all events</a></li>
-              </ul>
-            </nav>
-            <div class="spacer"></div>
-            <div class="blog-header">
-              <h1 class="blog-title">ACM Student Articles</h1>
-              <p class="lead blog-description">Checkout your peer's work!</p>
-            </div>
-            <hr />
-            {% for article in site.categories.articles limit:3 %}
-            <div class="blog-post">
-              <h2 class="blog-post-title">{{ article.title }} </h2>
-              <p class="blog-post-meta">{{ article.date  | date: '%B %d, %Y' }} • Author: <strong>{{ article.author }}</strong></p>
-              {{ article.excerpt }}
-              <p>
-              <a class="btn btn-primary btn-lg" href="{{ article.url }}" role="button">Read more »</a>
-              </p>
-            </div>
-            {% endfor %}
-            <nav>
-            <ul class="pager">
-              <li><a href="{{ site.baseurl }}/articles">View all articles</a></li>
-            </ul>
-          </nav>
+          • {% if page.link1 %}All{% elsif page.link2 %}MSUM{% elsif page.link3 %}Fargo/Moorhead{% elsif page.link4 %}National{% else %}All{% endif %}
         </div>
+        <hr />
+      </div>
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset sidebar-mute">
-            <h3>About</h3>
-            <p>{{ site.data.aboutinfo.site_description }}</p>
-            <a href="{{ site.baseurl }}/about.html">Find out more!</a>
-          </div>
-          <div class="sidebar-module sidebar-mute">
-            <h3>Meeting Notes</h3>
-            <p>Meetings occur {{ site.data.basicinfo.meeting_occurance }} on {{ site.data.basicinfo.meeting_day_one }} at {{ site.data.basicinfo.meeting_time_one }} and {{ site.data.basicinfo.meeting_day_two}} at {{ site.data.basicinfo.meeting_time_two }} in {{ site.data.basicinfo.room }}.</p>
-            <ol class="list-unstyled">
-              {% for meeting in site.categories.meetings limit:10 %}
-              <li><a href="{{ meeting.url }}">{{ meeting.date | date: '%B %d, %Y' }}</a></li>
-              {% endfor %}
-              <p></p>
-              <li><a href="{{ site.data.planning_page }}">GitHub Planning Page</a></li>
-              <li><a href="{{ site.baseurl }}/semester-plan.html">Semester Planning Page</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module sidebar-module-inset sidebar-mute">
-            <h3>Articles</h3>
-            <p>Articles are written by students as either homework or private research. Youc could see yours here!  Contact an officer!</p>
-            <ol class="list-unstyled">
-              {% for article in site.categories.articles limit:4 %}
-              <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-              <p></p>
-              {% endfor %}
-              <li><a href="{{ site.baseurl }}/articles">View all articles</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module sidebar-mute">
-            <h3>Connect</h3>
-            <ol class="list-unstyled">
-              <li><a href="{{ site.data.aboutinfo.github_url }}" target="_blank">GitHub</a></li>
-              <li><a href="{{ site.data.aboutinfo.twitter_url }}" target="_blank">Twitter</a></li>
-              <li><a href="{{ site.data.aboutinfo.facebook_url }}" target="_blank">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
 
-      </div><!-- /.row -->
+
+      <ul class="nav nav-tabs hidden-xs">
+        <li class="{{ page.link1 }}"><a href="{{ site.baseurl }}/">All</a></li>
+        <li class="{{ page.link2 }}"><a href="{{ site.baseurl }}/home-MSUM.html">MSUM</a></li>
+        <li class="{{ page.link3 }}"><a href="{{ site.baseurl }}/home-FM.html">Fargo/Moorhead</a></li>
+        <li class="{{ page.link4 }}"><a href="{{ site.baseurl }}/home-National.html">National</a></li>
+      </ul>
+
+      {{ content }}
+
+      <nav>
+        <ul class="pager">
+          <li><a href="{{ site.baseurl }}/events.html">View all events</a></li>
+        </ul>
+      </nav>
+
+      <div class="spacer"></div>
+      <div class="blog-header">
+        <h1 class="blog-title">ACM Student Articles</h1>
+        <p class="lead blog-description">Checkout your peer's work!</p>
+      </div>
+      <hr />
+
+      {% for article in site.categories.articles limit:3 %}
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ article.title }} </h2>
+        <p class="blog-post-meta">{{ article.date  | date: '%B %d, %Y' }} • Author: <strong>{{ article.author }}</strong></p>
+
+        {{ article.excerpt }}
+
+        <p>
+          <a class="btn btn-primary btn-lg" href="{{ article.url }}" role="button">Read more »</a>
+        </p>
+      </div>
+      {% endfor %}
+
+      <nav>
+        <ul class="pager">
+          <li><a href="{{ site.baseurl }}/articles">View all articles</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+      <div class="sidebar-module sidebar-module-inset sidebar-mute">
+        <h3>About</h3>
+        <p>{{ site.data.aboutinfo.site_description }}</p>
+        <a href="{{ site.baseurl }}/about.html">Find out more!</a>
+      </div>
+
+      <div class="sidebar-module sidebar-mute">
+        <h3>Meeting Notes</h3>
+        <p>Meetings occur {{ site.data.basicinfo.meeting_occurance }} on {{ site.data.basicinfo.meeting_day_one }} at {{ site.data.basicinfo.meeting_time_one }} and {{ site.data.basicinfo.meeting_day_two}} at {{ site.data.basicinfo.meeting_time_two }} in {{ site.data.basicinfo.room }}.</p>
+        <ol class="list-unstyled">
+
+          {% for meeting in site.categories.meetings limit:6 %}
+          <li><a href="{{ meeting.url }}">{{ meeting.date | date: '%B %d, %Y' }}</a></li>
+          {% endfor %}
+
+          <p></p>
+          <li><a href="{{ site.data.aboutinfo.planning_page }}">GitHub Planning Page</a></li>
+          <li><a href="{{ site.baseurl }}/semester-plan.html">Semester Planning Page</a></li>
+        </ol>
+      </div>
+
+      <div class="sidebar-module sidebar-module-inset sidebar-mute">
+        <h3>Articles</h3>
+        <p>Articles are written by students as either homework or private research. Youc could see yours here!  Contact an officer!</p>
+        <ol class="list-unstyled">
+          <li><a href="{{ site.baseurl }}/articles">View all articles</a></li>
+        </ol>
+      </div>
+
+      <div class="sidebar-module sidebar-mute">
+        <h3>Connect</h3>
+        <ol class="list-unstyled">
+          <li><a href="{{ site.data.aboutinfo.dragon_central_url }}" target="_blank">Dragon Central</a> </li>
+          <li><a href="{{ site.data.aboutinfo.github_url }}" target="_blank">GitHub</a></li>
+          <li><a href="{{ site.data.aboutinfo.facebook_url }}" target="_blank">Facebook</a></li>
+        </ol>
+      </div>
+
+    </div><!-- /.blog-sidebar -->
+  </div><!-- /.row -->
 </div>

@@ -18,14 +18,14 @@ links:
     title: "Github"
   - link: "https://desktop.github.com"
     title: "Github for Desktop"
-  - link: "http://msumacm.org/git"
+  - link: "http://msum-acm.github.io/git"
     title: "MSUM ACM Git Page"
-  - link: "http://msumacm.org/resources/acmgit.pdf"
+  - link: "http://msum-acm.github.io/resources/acmgit.pdf"
     title: "Git PowerPoint Presentation"
 
 ---
 
-Jake Humphrey will be presenting Git using the Github for desktop interface.  This removes the need to know command line git commands though if you would like to know more, there is a list of all the commands on the website at msumacm.org/git and we will be willing to go through it later in the Linux Lab.  
+Jake Humphrey will be presenting Git using the Github for desktop interface.  This removes the need to know command line git commands though if you would like to know more, there is a list of all the commands on the website at [msum-acm.github.io/git](http://msum-acm.github.io/git) and we will be willing to go through it later in the Linux Lab.
 
 
 Students will need to bring their laptop to the event in order to work through the workshop.  Dr. Ficek is also offering extra credit points to students in her class for attending and going through the entire workshop.

@@ -1,7 +1,5 @@
 # MSUM ACM Website
 
-[Check it out here](http://msumacm.org)
-
-### New design, less than 2 weeks old!
+[Check it out here](http://msum-acm.github.io)
 
 Submit any bugs you find on the issues page

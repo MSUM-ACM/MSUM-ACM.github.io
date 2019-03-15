@@ -1,0 +1,29 @@
+<div class="page-header">
+    <h1>Meet your Officers!</h1>
+</div>
+
+{% for row in site.data.officers %}
+<div class="col-sm-6">
+
+    {% for item in row.col %}
+    <div>
+        <h2><strong>{{ item.title }}</strong></h2>
+        <h4><strong>{{ item.name }}</strong></h4>
+
+        {% if item.information %}
+        <p>{{ item.information }}</p>
+        {% endif %}
+
+        {% if item.links %}
+        <ol class="list-unstyled">
+
+            {% for itemLink in item.links %}
+            <li><a href="{{ itemLink.link }}" {% if itemLink.target %}target="{{ itemLink.target }}"{% endif %}>{{ itemLink.title }}</a></li>
+            {% endfor %}
+
+        </ol>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
