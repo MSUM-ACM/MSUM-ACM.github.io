@@ -23,6 +23,10 @@
 
     - title: "Secretary"
       name: "Anisha Shrestha"
+      links:
+        - link: "mailto: shrestan@mnstate.edu"
+          title: "Email Anisha"
+          target: "_blank"
 
     - title: "Treasurer"
       name: "Santosh Chapagain"
