@@ -12,12 +12,31 @@
 
     - title: "Vice President"
       name: "Priyanka Aryal"
+      information: "Priyanka is a Senior this year and is an intern at Border States Electric."
+      links:
+        - link: "mailto: aryalpr@mnstate.edu"
+          title: "Email Priyanka"
+          target: "_blank"
+        - link: "https://github.com/priary"
+          title: "Priyanka's GitHub"
+          target: "_blank"
 
     - title: "Secretary"
       name: "Anisha Shrestha"
+      links:
+        - link: "mailto: shrestan@mnstate.edu"
+          title: "Email Anisha"
+          target: "_blank"
 
     - title: "Treasurer"
       name: "Santosh Chapagain"
+      links:
+        - link: "mailto: chapagaisa@mnstate.edu"
+          title: "Email Santosh"
+          target: "_blank"
+        - link: "https://github.com/chapagaisa"
+          title: "Santosh's GitHub"
+          target: "_blank"
 
     - title: "Web Master"
       name: "Heecheon Park"

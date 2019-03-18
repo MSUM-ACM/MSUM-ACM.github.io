@@ -10,15 +10,14 @@ layout: page
   - Reduce strict voting requirements from unanimous to two-thirds
 + Events
   - [Git / GitHub Workshop](https://github.com/MSUM-ACM/Planning/wiki/GitHub)
-    - 2/27/2019 6:00PM
-    - 2/28/2019 4:00PM
+    - 2/27/2019 6:00PM in Bridges 162
+    - 2/28/2019 4:00PM in Bridges 162
   - [Myriad Mobile Presentation](https://github.com/MSUM-ACM/Companies/wiki/Myriad-Mobile)
-    - 2/27/2019 6:00PM
-    - 2/28/2019 4:00PM
+    - 3/20/2019 6:00PM in Bridges 162
+    - 3/21/2019 4:00PM in Bridges 164
   - [Discovery Benefits Presentation](https://github.com/MSUM-ACM/Companies/wiki/Discovery-Benefits)
-    - 2/27/2019 6:00PM
-    - 2/28/2019 4:00PM
-<Projects : group projects>
+    - 2/27/2019 6:00PM in Bridges 162
+    - 2/28/2019 4:00PM in Bridges 164
 + Competitions
   - MSUM students
     <DigiKey>

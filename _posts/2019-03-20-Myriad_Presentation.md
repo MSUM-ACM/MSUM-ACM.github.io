@@ -2,6 +2,7 @@
 layout: posts
 title: "Myriad Presentation"
 event: true
+subtitle: "Hosted by MSUM ACM"
 categories: "all msum"
 
 links:
