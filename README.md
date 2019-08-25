@@ -1,6 +1,6 @@
 # MSUM ACM Website
 
-[![Build Status](https://travis-ci.org/MSUM-ACM/MSUM-ACM.github.io.svg?branch=master)](https://travis-ci.org/MSUM-ACM/MSUM-ACM.github.io)
+[![Build Status](https://travis-ci.org/MSUM-ACM/MSUM-ACM.github.io.svg?branch=jekyll-update)](https://travis-ci.org/MSUM-ACM/MSUM-ACM.github.io)
 
 [Check it out here](http://msum-acm.github.io/)
 
