@@ -1,5 +1,7 @@
 # MSUM ACM Website
 
+[![Build Status](https://travis-ci.org/MSUM-ACM/MSUM-ACM.github.io.svg?branch=master)](https://travis-ci.org/MSUM-ACM/MSUM-ACM.github.io)
+
 [Check it out here](http://msum-acm.github.io/)
 
 ### Back up and running! Currently updating!
