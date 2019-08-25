@@ -3,8 +3,13 @@ cache:
   bundler: true
 rvm:
   - 2.6.3
-script: "bundle install jekyll build"
 
 before_install:
   - gem update --system --no-document
   - gem install bundler --no-document
+
+install:
+  - bundle install
+
+script:
+  - jekyll build
