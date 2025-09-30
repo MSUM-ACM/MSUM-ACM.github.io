@@ -1,0 +1,60 @@
+{
+  "advisor": {
+    "name": "Dr. Ronni Kurtzhals",
+    "role": "ACM Advisor",
+    "years": "Spring 2025 - Present",
+    "bio": "Dr. Kurtzhals is a professor in the Computer Science & Information Systems department at MSUM, providing guidance and support to the ACM student organization.",
+    "github_url": "https://github.com/ryankoenecke"
+  },
+  "members": [
+    {
+      "name": "Laween Al-Sulaivany",
+      "role": "President",
+      "years": "Spring 2025 - Fall 2025",
+      "bio": "Laween is a dedicated computer science student with a passion for software development and a strong commitment to the ACM community.",
+      "github_url": "https://github.com/laween-alsulaivany",
+      "photo_url": "assets/img/Laween Headshot.png"
+    },
+    {
+      "name": "James Zook",
+      "role": "Vice President",
+      "years": "Spring 2025 - Fall 2025",
+      "bio": "CyberSecurity and Comp Sci. Major. Born and raised in ND so I hope you don't judge me. Love to help and learn alongside people. :)",
+      "github_url": "https://github.com/GermanRacc00n",
+      "photo_url": "assets/img/James Zook Headshot.png"
+    },
+    {
+      "name": "Sebastian Hanson",
+      "role": "Treasurer",
+      "years": "Fall 2025 - Fall 2025",
+      "bio": "Sebastian is the treasurer of ACM, managing finances and ensuring the club's resources are well allocated.",
+      "github_url": "https://github.com/sebastianhanson",
+      "photo_url": "assets/img/Sebastian Hanson Headshot.png"
+    },
+    {
+      "name": "Zach Moore",
+      "role": "Webmaster",
+      "years": "Spring 2025 - Fall 2025",
+      "bio": "Zach is the webmaster of ACM, responsible for maintaining the club's website and online presence.",
+      "github_url": "https://github.com/zachmoore",
+      "photo_url": "assets/img/Zach Moore Headshot.png"
+    },
+    {
+      "name": "Donovan Morse",
+      "role": "Secretary",
+      "years": "Spring 2025 - Fall 2025",
+      "bio": "Donovan is the secretary of ACM, known for his Minecraft skills and passion for space exploration.",
+      "github_url": "https://github.com/donovanmorse",
+      "photo_url": "assets/img/Donovan Morse Headshot.png"
+    },
+    {
+      "name": "Jacelynne Stachovich",
+      "role": "Marketer",
+      "years": "Fall 2023 - Fall 2025",
+      "bio": "Jacelynne is a creative marketer with a major in Criminal Justice & Psychology, and a passion for promoting ACM events and engaging the community.",
+      "github_url": "https://instagram.com/jacee_29",
+      "photo_url": "assets/img/Jacelynne Stachovich Headshot.png"
+    }
+  ]
+
+}

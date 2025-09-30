@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MSUM ACM</title>
+  <!-- Google Fonts: Inter (primary) & Poppins (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">MSUM ACM</div>
+      <nav class="nav">
+        <a href="#about" class="scroll-link">About</a>
+        <a href="#board" class="scroll-link">Board</a>
+        <a href="#events" class="scroll-link">Events</a>
+        <a href="#git" class="scroll-link">Git</a>
+        <a href="#research" class="scroll-link">Research</a>
+        <a href="#prints" class="scroll-link">3D Print</a>
+        <a href="#laptops" class="scroll-link">Laptop Borrowing</a>
+        <a href="#photos" class="scroll-link">Photos</a>
+        <button id="contactBtn" class="btn">Contact</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <h1>Welcome to MSUM ACM</h1>
+      <p>Community, projects, mentorship.</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn scroll-link">Learn More</a>
+        <button id="contactBtnHero" class="btn btn-alt">Contact</button>
+      </div>
+      <div class="quick-links">
+        <a href="https://discord.gg/GKy9htGXau" target="_blank" rel="noopener">Join Discord</a>
+        <a href="mailto:msumacm@mnstate.edu">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>The Association for Computing Machinery (ACM) at Minnesota State University Moorhead is more than just a student organization – we're a community of passionate learners, creators, and innovators. Whether you're a seasoned programmer or just starting your journey in computer science, ACM provides the perfect environment to grow your skills, build lasting connections, and contribute to meaningful projects.</p>
+        <p>Our chapter focuses on hands-on learning through workshops, coding competitions, collaborative projects, and industry guest speakers. We believe that the best way to learn technology is by doing, sharing, and supporting each other along the way.</p>
+      </div>
+    </section>
+
+    <section id="board" class="section">
+      <div class="container">
+        <h2>Meet Our Board</h2>
+        <p>The dedicated students and faculty who make ACM possible</p>
+        <div id="boardGrid" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="events" class="section">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <p>Stay updated with ACM activities and MSUM tech events</p>
+        <div id="eventsContainer" class="events-grid"></div>
+      </div>
+    </section>
+
+    <section id="git" class="section">
+      <div class="container">
+        <h2>Git & Version Control</h2>
+        <p>Master the essential skill every software professional needs! Git is a distributed version control system that's fundamental to modern software development.</p>
+        <div class="git-resources">
+          <div class="git-commands">
+            <h3>Essential Commands</h3>
+            <ul>
+              <li><code>git init</code> - Initialize a new repository</li>
+              <li><code>git add .</code> - Stage all changes for commit</li>
+              <li><code>git commit -m "message"</code> - Save changes with a description</li>
+              <li><code>git push</code> - Upload changes to remote repository</li>
+              <li><code>git pull</code> - Download latest changes from remote</li>
+            </ul>
+          </div>
+          <div class="git-links">
+            <h3>Learning Resources</h3>
+            <ul>
+              <li><a href="https://git-scm.com/" target="_blank" rel="noopener">Official Git Documentation</a></li>
+              <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">Interactive Git Tutorial</a></li>
+            </ul>
+          </div>
+        </div>
+        <p><strong>Join our Git workshops to get hands-on experience and personalized guidance!</strong></p>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="container">
+        <h2>Research Opportunities</h2>
+        <p>Take your learning beyond the classroom! ACM provides numerous opportunities to engage in meaningful research, develop innovative projects, and build an impressive portfolio.</p>
+        <div class="research-grid">
+          <div class="research-item">
+            <h3>🔬 Undergraduate Research</h3>
+            <p>Have an idea you're passionate about? Write a research proposal and present it to fellow students. Undergraduate research is one of the most valuable resume builders you can obtain!</p>
+          </div>
+          <div class="research-item">
+            <h3>🛠️ Software Development</h3>
+            <p>Join our development teams to create real-world software solutions. From educational tools to practical applications that solve campus problems.</p>
+          </div>
+          <div class="research-item">
+            <h3>📚 Study Teams</h3>
+            <p>Want to master a programming language not taught at MSUM? Form a study group and dive deep into emerging technologies.</p>
+          </div>
+          <div class="research-item">
+            <h3>💡 Innovation Hub</h3>
+            <p>Got ideas that could change the world? Share your concepts and help shape the future of technology with fellow innovators.</p>
+          </div>
+        </div>
+        <div class="cta-section">
+          <h3>Ready to start your research journey?</h3>
+          <p>Contact any board member to discuss your ideas, or attend our weekly meetings to learn about current research opportunities.</p>
+          <button id="researchContactBtn" class="btn">Get Involved in Research</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="prints" class="section">
+      <div class="container">
+        <h2>3D Printing Services</h2>
+        <p>Transform your digital designs into physical reality with our 3D printing services.</p>
+        <button id="openPrintForm" class="btn">Request a 3D Print</button>
+        <div id="printGallery" class="grid gallery"></div>
+      </div>
+    </section>
+
+    <section id="laptops" class="section">
+      <div class="container">
+        <h2>Laptop Borrowing Program</h2>
+        <p>Need reliable computing power for coursework, projects, or events? Our laptop borrowing program provides short-term access to quality laptops.</p>
+        <button id="openLaptopForm" class="btn">Borrow a Laptop</button>
+      </div>
+    </section>
+
+    <section id="photos" class="section">
+      <div class="container">
+        <h2>ACM in Action</h2>
+        <p>See what we've been up to! From intense hackathon sessions to casual study groups, these photos capture the energy and community spirit that makes MSUM ACM special.</p>
+        <div id="photoGallery" class="grid gallery"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CC 2025 · MSUM ACM</p>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-labelledby="contactTitle">
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" data-close>&times;</button>
+      <h3 id="contactTitle">Get in touch</h3>
+      <p class="muted">Ask a question or propose an event. We'll reply by email.</p>
+
+      <form id="contactForm">
+        <label>Name
+          <input type="text" name="name" required maxlength="100" />
+        </label>
+        <label>Email
+          <input type="email" name="email" required maxlength="200" />
+        </label>
+        <label>Message
+          <textarea name="message" required maxlength="2000"></textarea>
+        </label>
+        <button type="submit" class="btn" id="contactSubmit">Send</button>
+        <div class="form-status" id="contactStatus" aria-live="polite"></div>
+      </form>
+
+      <div class="modal-links">
+        <a href="https://discord.gg/GKy9htGXau" target="_blank" rel="noopener">Discord</a>
+        <a href="mailto:msumacm@mnstate.edu">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Print Request Modal -->
+  <div class="modal" id="printModal" aria-hidden="true" role="dialog" aria-labelledby="printTitle">
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" data-close>&times;</button>
+      <h3 id="printTitle">3D Print Request</h3>
+      <form id="printForm">
+        <label>Name
+          <input type="text" name="name" required maxlength="100" />
+        </label>
+        <label>Email
+          <input type="email" name="email" required maxlength="200" />
+        </label>
+        <label>Material
+          <select name="material" required>
+            <option value="PLA">PLA</option>
+            <option value="PETG">PETG</option>
+            <option value="ABS">ABS</option>
+          </select>
+        </label>
+        <label>Google Drive Link to Model Files
+          <input type="url" name="drive_link" required maxlength="500" placeholder="https://drive.google.com/..." />
+          <small>Share your STL/design files via Google Drive and paste the link here</small>
+        </label>
+        <label>Notes
+          <textarea name="notes" maxlength="1000" placeholder="Print settings, colors, special requirements, etc."></textarea>
+        </label>
+        <button type="submit" class="btn" id="printSubmit">Submit Request</button>
+        <div class="form-status" id="printStatus" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Laptop Borrow Modal -->
+  <div class="modal" id="laptopModal" aria-hidden="true" role="dialog" aria-labelledby="laptopTitle">
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" data-close>&times;</button>
+      <h3 id="laptopTitle">Borrow a Laptop</h3>
+      <form id="laptopForm">
+        <label>Name
+          <input type="text" name="name" required maxlength="100" />
+        </label>
+        <label>Email
+          <input type="email" name="email" required maxlength="200" />
+        </label>
+        <label>Intended Use Period
+          <input type="text" name="dates" placeholder="e.g., Oct 12–Oct 20, or 2 weeks" required maxlength="100" />
+        </label>
+        <label>Purpose
+          <textarea name="purpose" required maxlength="500" placeholder="What will you use the laptop for? (coursework, project, etc.)"></textarea>
+        </label>
+        <label>
+          <input type="checkbox" name="agreement" required />
+          I agree to return the laptop in good condition and follow all program terms.
+        </label>
+        <button type="submit" class="btn" id="laptopSubmit">Submit Request</button>
+        <div class="form-status" id="laptopStatus" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    window.__ACM_CONFIG__ = {
+      siteName: "MSUM ACM",
+      discordInvite: "https://discord.gg/GKy9htGXau",
+      contactEmail: "msumacm@mnstate.edu",
+      // GitHub configuration for forms
+      github: {
+        repoOwner: "MSUM-ACM", // Replace with your GitHub username
+        repoName: "msum_acm_website",         // Replace with your repository name
+        token: "YOUR_GITHUB_TOKEN_HERE"      // For local testing only - REMOVE before deploying! FIXME:
+      }
+    };
+  </script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/rss-parser.js"></script>
+  <script src="assets/js/github-forms.js"></script>
+</body>
+</html>
