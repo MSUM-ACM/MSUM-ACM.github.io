@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css?v=0.5" />
 </head>
 <body>
   <header class="site-header">
@@ -29,6 +29,10 @@
   </header>
 
   <section class="hero" id="hero">
+    <video autoplay muted loop id="bg-video">
+        <source src="assets/hero_vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="container hero-inner">
       <h1>Welcome to MSUM ACM</h1>
       <p>Community, projects, mentorship.</p>
@@ -259,7 +263,7 @@
       }
     };
   </script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js?v=1.0.1"></script>
   <script src="assets/js/rss-parser.js"></script>
   <script src="assets/js/github-forms.js"></script>
 </body>
