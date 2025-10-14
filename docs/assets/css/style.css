@@ -99,6 +99,7 @@ h6 {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
+   filter: brightness(75%);
 }
 
 .hero {
@@ -117,7 +118,8 @@ h6 {
 .hero-inner {
   position: relative;
   z-index: 1;
-  text-align: center
+  text-align: center;
+  text-shadow: #0c0b0b 1px 1px 10px;
 }
 
 .hero .quick-links {
