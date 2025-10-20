@@ -29,15 +29,9 @@
   }
 
   // Wire form buttons to open external forms
-  const contactBtns = [
-    document.getElementById('contactBtn'), 
-    document.getElementById('contactBtnHero'),
-    document.getElementById('researchContactBtn')
-  ].filter(Boolean);
-  contactBtns.forEach(btn => btn.addEventListener('click', () => openExternalForm('contact')));
-  
   document.getElementById('openPrintForm')?.addEventListener('click', () => openExternalForm('print'));
   document.getElementById('openLaptopForm')?.addEventListener('click', () => openExternalForm('laptop'));
+  document.getElementById('researchContactBtn')?.addEventListener('click', () => openExternalForm('contact'));
 
 
   // Helper function to get avatar URL (uses UI Avatars API if no photo)
@@ -47,7 +41,7 @@
     }
     // Generate UI Avatars URL with ACM brand color
     const encodedName = encodeURIComponent(name);
-    return `https://ui-avatars.com/api/?name=${encodedName}&size=400&background=831925&color=fff&bold=true&font-size=0.4`;
+    return `https://ui-avatars.com/api/?name=${encodedName}&size=400&background=AF1329&color=fff&bold=true&font-size=0.45`;
   }
 
   // Load Board members from JSON with advisor featured prominently

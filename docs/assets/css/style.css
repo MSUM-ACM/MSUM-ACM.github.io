@@ -118,6 +118,25 @@ h6 {
   transform: translateY(0);
 }
 
+.btn-discord {
+  background: #5865F2;
+}
+
+.btn-discord:hover {
+  background: #4752C4;
+  box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
+}
+
+.btn-email {
+  background: #2d2d30;
+  border: 2px solid var(--brand);
+}
+
+.btn-email:hover {
+  background: var(--brand);
+  box-shadow: 0 6px 20px rgba(175, 19, 41, 0.4);
+}
+
 .btn-alt {
   background: #2a2a32;
 }
@@ -169,19 +188,14 @@ h6 {
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
   animation: fadeInUp 0.8s ease-out;
   padding: 0 20px;
+  margin-top: -60px;
 }
 
 .hero-inner h1 {
   font-size: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-}
-
-.hero-inner p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
 }
 
 @keyframes fadeInUp {
