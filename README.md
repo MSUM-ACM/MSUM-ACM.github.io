@@ -5,85 +5,80 @@ This is a complete **static website** with GitHub Actions form processing - full
 ## 🚀 Quick Test (Updated Instructions)
 
 1. Open PowerShell in this folder
-2. Run: `python -m http.server 8000 -d public` (or use VS Code Live Server)
-3. Open <http://localhost:8000> in browser
-4. Test all **modal forms** (Contact, 3D Print, Laptop Borrowing)
-5. Forms will show 401 errors locally (normal) - they work on GitHub Pages
+2. Navigate to the repo: `cd the-Trio-JLZ.github.io`
+3. Run: `python -m http.server 8000 -d docs`
+4. Open <http://localhost:8000> in browser
+5. Test all features (forms open external links)
 6. Check browser console for any JavaScript errors
 
 ## 📦 What's Included
 
 ### Core Features (Ready to Use)
 
-- **Single-page scroll site** with smooth navigation
-- **Contact modal** - GitHub Issues integration with Discord notifications
+- **Single-page scroll site** with smooth navigation and animations
+- **External forms** - Google/Microsoft Forms integration (no backend needed)
 - **Board section** - reads from `data/board.json` with advisor highlighting
-- **3D Print & Laptop borrowing forms** - full GitHub Actions processing
+- **Auto-generated avatars** - UI Avatars API for missing photos
 - **RSS Events parsing** - Dragon Central integration with CORS workaround
 - **Static site** - No PHP required, GitHub Pages ready
+- **Accessibility** - Focus states, ARIA labels, keyboard navigation
 
 ### Files Structure
 
 ```text
-public/
+docs/
 ├── index.html                 # Main static website
 ├── events.rss                # Dragon Central RSS feed
 ├── assets/
-│   ├── css/style.css         # Complete styling with Inter/Poppins fonts
+│   ├── css/style.css         # Complete styling with animations
 │   ├── img/                  # Logo and board member photos
 │   └── js/
-│       ├── app.js           # Navigation, modals, board loading
-│       ├── github-forms.js  # GitHub Issues form system
+│       ├── app.js           # Navigation, modals, board loading, animations
 │       └── rss-parser.js    # RSS parsing with CORS solution
 ├── data/
-│   ├── board.json           # Board member data (update this!)
+│   ├── board.json           # Board member data
 │   └── events.json          # Events data
-.github/
-├── workflows/
-│   ├── handle-forms.yml     # Process forms → Discord
-│   └── update-events.yml    # RSS → JSON conversion
-└── ISSUE_TEMPLATE/          # Form templates for GitHub Issues
+automation/
+└── scripts/
+    └── fetch_rss.py         # RSS fetching script
 ```
 
 ## 👨‍💻 For Judah - Next Steps
 
 ### Immediate Tasks
 
-1. **Update Repository Config**: Verify GitHub repo name in `index.html`
-2. **Update Board Data**: Edit `public/data/board.json` with real member info
-3. **Add Discord Webhook**: Set up `DISCORD_WEBHOOK_URL` secret in GitHub repo
-4. **Deploy to GitHub Pages**: Enable Pages in repository settings
-5. **Test Forms**: Verify GitHub Issues creation and Discord notifications
+1. **Configure External Forms**: Create Google/Microsoft Forms and update URLs in `index.html`
+2. **Update Board Data**: Edit `docs/data/board.json` with real member info
+3. **Deploy to GitHub Pages**: Enable Pages in repository settings (use `/docs` folder)
+4. **Add Member Photos**: Upload photos or use auto-generated avatars
+5. **Test All Links**: Verify forms, Discord invite, email links work
 
 ### Production Deployment
 
-- Push to GitHub repository (MSUM-ACM organization)
-- Enable GitHub Pages: Settings → Pages → Source: "main branch /public folder"
-- Configure Discord webhook for form notifications
-- Forms automatically work via GitHub Actions (no server setup needed)
+- Push to GitHub repository (MSUM-ACM organization or the-Trio-JLZ)
+- Enable GitHub Pages: Settings → Pages → Source: "main branch /docs folder"
+- Configure form URLs in `index.html` (Google Forms recommended)
+- Optional: Set up Cloudflare R2 for media storage (see `MEDIA_STORAGE_GUIDE.md`)
 
-### Additional Features (as needed)
+### Additional Features (Optional)
 
-- Hook up 3D print & laptop forms to actual backend
-- Add image galleries using external storage (as discussed)
+- Set up media storage using YouTube + Cloudflare R2 (see guide)
+- Add more board member photos
 - Integrate RSS automation from `automation/` folder
 
 ## 🔧 Technical Notes
 
-- **Static site**: Pure HTML/CSS/JavaScript (no PHP required)
-- **GitHub Actions**: Handles all form processing and Discord notifications
+- **Static site**: Pure HTML/CSS/JavaScript (no PHP or backend required)
+- **External Forms**: Google/Microsoft Forms (unlimited submissions)
 - **Mobile responsive**: Complete responsive design with modern fonts
-- **Form validation**: Client-side validation with GitHub Issues backend
+- **Form validation**: Client-side validation, external form processing
 - **RSS Integration**: Dragon Central events with CORS workaround
 - **Accessibility**: ARIA labels, keyboard navigation, screen reader support
+- **Animations**: Smooth scroll, fade-in effects, hover states
+- **Auto Avatars**: UI Avatars API for missing board photos
 
-## 📋 GitHub Actions System
+## � Ready for Production
 
-- **Forms → GitHub Issues**: All form submissions create trackable Issues
-- **Discord Notifications**: Automatic alerts for new submissions  
-- **RSS Processing**: Converts Dragon Central RSS to JSON for display
-- **Unlimited Forms**: No submission limits (vs 5/month with Formspree)
+The website is production-ready! Just configure your external forms and deploy to GitHub Pages.
 
-## 🚀 Ready for Production
-
-**See `UPDATE_FOR_JUDAH.md` for complete deployment guide and status update.**
+**See `MEDIA_STORAGE_GUIDE.md` for optional media hosting setup.**
