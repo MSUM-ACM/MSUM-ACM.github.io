@@ -40,6 +40,16 @@
   document.getElementById('openLaptopForm')?.addEventListener('click', () => openExternalForm('laptop'));
 
 
+  // Helper function to get avatar URL (uses UI Avatars API if no photo)
+  function getAvatarUrl(name, photoUrl) {
+    if (photoUrl && !photoUrl.includes('placeholder.png')) {
+      return photoUrl;
+    }
+    // Generate UI Avatars URL with ACM brand color
+    const encodedName = encodeURIComponent(name);
+    return `https://ui-avatars.com/api/?name=${encodedName}&size=400&background=831925&color=fff&bold=true&font-size=0.4`;
+  }
+
   // Load Board members from JSON with advisor featured prominently
   fetch('data/board.json').then(r=>r.json()).then(data=>{
     const grid = document.getElementById('boardGrid');
@@ -49,9 +59,10 @@
     if (data.advisor) {
       const advisorCard = document.createElement('div');
       advisorCard.className = 'card advisor-card';
+      const avatarUrl = getAvatarUrl(data.advisor.name, data.advisor.photo_url);
       advisorCard.innerHTML = `
         <div class="card-inner" style="background:#17171c;border:2px solid #4ade80;border-radius:14px;padding:20px;margin-bottom:20px">
-          <img src="${data.advisor.photo_url || 'assets/img/placeholder.png'}" alt="${data.advisor.name}" style="width:120px;height:120px;border-radius:50%;margin:0 auto 15px;display:block;object-fit:cover" />
+          <img src="${avatarUrl}" alt="${data.advisor.name}" style="width:120px;height:120px;border-radius:50%;margin:0 auto 15px;display:block;object-fit:cover" />
           <h3 style="text-align:center;margin:0 0 5px;font-size:1.3em;color:#4ade80">${data.advisor.name}</h3>
           <p style="text-align:center;margin:0 0 15px;color:#888;font-size:1.1em">${data.advisor.role} · ${data.advisor.years}</p>
           <p style="margin-top:10px;text-align:center">${data.advisor.bio}</p>
@@ -67,9 +78,10 @@
     data.members.forEach(m=>{
       const card = document.createElement('div');
       card.className = 'card';
+      const avatarUrl = getAvatarUrl(m.name, m.photo_url);
       card.innerHTML = `
         <div class="card-inner" style="background:#17171c;border:1px solid #24242b;border-radius:14px;padding:14px">
-          <img src="${m.photo_url || 'assets/img/placeholder.png'}" alt="${m.name}" style="width:100%;border-radius:10px;margin-bottom:10px;object-fit:cover;height:200px" />
+          <img src="${avatarUrl}" alt="${m.name}" style="width:100%;border-radius:10px;margin-bottom:10px;object-fit:cover;height:200px" />
           <strong>${m.name}</strong><br/>
           <span class="muted">${m.role} · ${m.years}</span>
           <p style="margin-top:8px">${m.bio}</p>
