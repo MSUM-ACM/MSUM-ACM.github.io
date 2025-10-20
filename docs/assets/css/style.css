@@ -269,6 +269,24 @@ h6 {
   background: linear-gradient(135deg, var(--bg) 0%, #25262a 100%);
 }
 
+/* Subtle separator between sections */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(175, 19, 41, 0.3) 20%, rgba(224, 160, 47, 0.4) 50%, rgba(175, 19, 41, 0.3) 80%, transparent 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Hide separator on last section */
+.section:last-child::after {
+  display: none;
+}
+
 /* Uniform crosshatch pattern for all sections */
 .section::before {
   content: '';
@@ -311,32 +329,6 @@ h6 {
     repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(175, 19, 41, 0.4) 35px, rgba(175, 19, 41, 0.4) 36px),
     repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(224, 160, 47, 0.3) 35px, rgba(224, 160, 47, 0.3) 36px),
     repeating-linear-gradient(0deg, transparent, transparent 150px, rgba(175, 19, 41, 0.12) 150px, rgba(175, 19, 41, 0.12) 151px);
-}
-
-/* Accent glow in specific sections */
-#board::after,
-#research::after {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(175, 19, 41, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-#events::after {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(224, 160, 47, 0.04) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .section .container {
