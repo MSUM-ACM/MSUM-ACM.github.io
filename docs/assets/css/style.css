@@ -1,9 +1,11 @@
 :root {
-  --bg: #0f0f12;
-  --text: #e9e9ee;
+  --bg: #28292B;
+  --text: #E2E2E2;
   --muted: #a6a6b3;
-  --brand: #831925;
-  --panel: #17171c;
+  --brand: #AF1329;
+  --accent: #E0A02F;
+  --panel: #28292B;
+  --panel-border: #3a3a3e;
 }
 
 * {
@@ -96,17 +98,20 @@ h6 {
   background: var(--brand);
   color: #fff;
   border: 0;
-  padding: 10px 16px;
-  border-radius: 12px;
+  padding: 12px 28px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn:hover {
-  background: #9e1f2e;
+  background: #c91636;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(131, 25, 37, 0.4);
+  box-shadow: 0 6px 20px rgba(175, 19, 41, 0.4);
 }
 
 .btn:active {
@@ -122,36 +127,61 @@ h6 {
 }
 
 #bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(70%);
-    /* Enhanced shadow for better text readability */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#bg-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 aspect ratio */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: brightness(60%);
 }
 
 .hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0;
-    border-bottom: 1px solid #222;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0;
+  overflow: hidden;
 }
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.8);
   animation: fadeInUp 0.8s ease-out;
+  padding: 0 20px;
+}
+
+.hero-inner h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero-inner p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
 }
 
 @keyframes fadeInUp {
@@ -165,20 +195,29 @@ h6 {
   }
 }
 
-.hero .quick-links {
-  margin-top: 12px;
+.hero-actions {
   display: flex;
   gap: 16px;
-  justify-content: center
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.hero .quick-links {
+  margin-top: 8px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  font-size: 0.95rem;
 }
 
 .hero .quick-links a {
   transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
 }
 
 .hero .quick-links a:hover {
-  transform: translateY(-2px);
-  color: var(--brand);
+  color: var(--accent);
 }
 
 .hero::after {
@@ -188,8 +227,9 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.85);
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.7);
   z-index: 1;
+  pointer-events: none;
 }
 
 .section {
@@ -505,9 +545,23 @@ textarea {
     gap: 8px
   }
 
+  .hero-inner h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-inner p {
+    font-size: 1.2rem;
+  }
+
   .hero-actions {
     flex-direction: column;
-    gap: 12px
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
   }
 }
 
