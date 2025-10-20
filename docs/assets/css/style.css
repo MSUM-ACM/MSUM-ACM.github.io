@@ -53,15 +53,23 @@ h6 {
   position: sticky;
   top: 0;
   z-index: 2;
+  background: rgba(40, 41, 43, 0.85);
+  backdrop-filter: saturate(120%) blur(12px);
+  border-bottom: 1px solid rgba(175, 19, 41, 0.2);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(175, 19, 41, 0.1) inset;
+  transition: all 0.3s ease;
 }
 
 .site-header.scrolled {
-  position: sticky;
-  background: rgba(15, 15, 18, .8);
-  backdrop-filter: saturate(120%) blur(8px);
-  border-bottom: 1px solid #222;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-
+  background: rgba(15, 15, 18, .95);
+  backdrop-filter: saturate(120%) blur(16px);
+  border-bottom: 1px solid rgba(175, 19, 41, 0.4);
+  box-shadow: 
+    0 6px 30px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(224, 160, 47, 0.15) inset,
+    0 -1px 20px rgba(175, 19, 41, 0.1) inset;
 }
 
 
@@ -87,14 +95,33 @@ h6 {
   text-decoration: none;
   opacity: .9;
   transition: all 0.2s ease;
-  padding: 6px 8px;
+  padding: 6px 12px;
   border-radius: 6px;
+  position: relative;
+  font-weight: 500;
+}
+
+.nav a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
 .nav a:hover {
   opacity: 1;
   color: var(--brand);
-  background: rgba(131, 25, 37, 0.1);
+  background: rgba(175, 19, 41, 0.08);
+  transform: translateY(-1px);
+}
+
+.nav a:hover::before {
+  width: 80%;
 }
 
 .nav a:focus {
@@ -260,14 +287,14 @@ h6 {
   background: var(--bg);
 }
 
-/* Alternating section backgrounds */
+/* Alternating section backgrounds
 .section:nth-child(even) {
   background: linear-gradient(135deg, #2d2e31 0%, #2a2b2e 100%);
 }
 
 .section:nth-child(odd) {
   background: linear-gradient(135deg, var(--bg) 0%, #25262a 100%);
-}
+} */
 
 /* Subtle separator between sections */
 .section::after {
@@ -336,6 +363,68 @@ h6 {
   z-index: 1;
 }
 
+/* Section typography */
+.section h2 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-intro {
+  margin-bottom: 2.5rem;
+}
+
+.section-actions {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: var(--text);
+}
+
+/* About section specific styling */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-column h3 {
+  color: var(--brand);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-column p {
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Board grid - ensure uniform card sizes */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -345,14 +434,20 @@ h6 {
 /* Card styles with hover effects */
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card .card-inner {
   transition: border-color 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card:hover .card-inner {
@@ -364,6 +459,70 @@ h6 {
   max-width: 600px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Git section styling */
+.git-cta {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Research section styling */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.research-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.research-item:hover {
+  border-color: var(--brand);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(175, 19, 41, 0.15);
+}
+
+.research-item h3 {
+  color: var(--brand);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.research-item p {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.cta-section {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(175, 19, 41, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(175, 19, 41, 0.2);
+}
+
+.cta-section h3 {
+  color: var(--brand);
+  margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.cta-section .btn {
+  margin-top: 1rem;
 }
 
 .gallery img {
