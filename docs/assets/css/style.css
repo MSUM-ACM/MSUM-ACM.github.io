@@ -32,7 +32,15 @@ h6 {
 
 .logo {
   font-family: 'Poppins', 'Inter', sans-serif;
-  font-weight: 700
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
 }
 
 .container {
