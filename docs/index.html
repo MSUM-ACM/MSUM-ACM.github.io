@@ -164,110 +164,21 @@
     </div>
   </footer>
 
-  <!-- Contact Modal -->
-  <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-labelledby="contactTitle">
-    <div class="modal-dialog" role="document">
-      <button class="modal-close" data-close>&times;</button>
-      <h3 id="contactTitle">Get in touch</h3>
-      <p class="muted">Ask a question or propose an event. We'll reply by email.</p>
-
-      <form id="contactForm">
-        <label>Name
-          <input type="text" name="name" required maxlength="100" />
-        </label>
-        <label>Email
-          <input type="email" name="email" required maxlength="200" />
-        </label>
-        <label>Message
-          <textarea name="message" required maxlength="2000"></textarea>
-        </label>
-        <button type="submit" class="btn" id="contactSubmit">Send</button>
-        <div class="form-status" id="contactStatus" aria-live="polite"></div>
-      </form>
-
-      <div class="modal-links">
-        <a href="https://discord.gg/GKy9htGXau" target="_blank" rel="noopener">Discord</a>
-        <a href="mailto:msumacm@mnstate.edu">Email</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Print Request Modal -->
-  <div class="modal" id="printModal" aria-hidden="true" role="dialog" aria-labelledby="printTitle">
-    <div class="modal-dialog" role="document">
-      <button class="modal-close" data-close>&times;</button>
-      <h3 id="printTitle">3D Print Request</h3>
-      <form id="printForm">
-        <label>Name
-          <input type="text" name="name" required maxlength="100" />
-        </label>
-        <label>Email
-          <input type="email" name="email" required maxlength="200" />
-        </label>
-        <label>Material
-          <select name="material" required>
-            <option value="PLA">PLA</option>
-            <option value="PETG">PETG</option>
-            <option value="ABS">ABS</option>
-          </select>
-        </label>
-        <label>Google Drive Link to Model Files
-          <input type="url" name="drive_link" required maxlength="500" placeholder="https://drive.google.com/..." />
-          <small>Share your STL/design files via Google Drive and paste the link here</small>
-        </label>
-        <label>Notes
-          <textarea name="notes" maxlength="1000" placeholder="Print settings, colors, special requirements, etc."></textarea>
-        </label>
-        <button type="submit" class="btn" id="printSubmit">Submit Request</button>
-        <div class="form-status" id="printStatus" aria-live="polite"></div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Laptop Borrow Modal -->
-  <div class="modal" id="laptopModal" aria-hidden="true" role="dialog" aria-labelledby="laptopTitle">
-    <div class="modal-dialog" role="document">
-      <button class="modal-close" data-close>&times;</button>
-      <h3 id="laptopTitle">Borrow a Laptop</h3>
-      <form id="laptopForm">
-        <label>Name
-          <input type="text" name="name" required maxlength="100" />
-        </label>
-        <label>Email
-          <input type="email" name="email" required maxlength="200" />
-        </label>
-        <label>Intended Use Period
-          <input type="text" name="dates" placeholder="e.g., Oct 12–Oct 20, or 2 weeks" required maxlength="100" />
-        </label>
-        <label>Purpose
-          <textarea name="purpose" required maxlength="500" placeholder="What will you use the laptop for? (coursework, project, etc.)"></textarea>
-        </label>
-        <label>
-          <input type="checkbox" name="agreement" required />
-          I agree to return the laptop in good condition and follow all program terms.
-        </label>
-        <button type="submit" class="btn" id="laptopSubmit">Submit Request</button>
-        <div class="form-status" id="laptopStatus" aria-live="polite"></div>
-      </form>
-    </div>
-  </div>
-
   <script>
     window.__ACM_CONFIG__ = {
       siteName: "MSUM ACM",
       discordInvite: "https://discord.gg/GKy9htGXau",
       contactEmail: "msumacm@mnstate.edu",
-      // GitHub configuration for forms
-      github: {
-        repoOwner: "the-Trio-JLZ", // Replace with your GitHub username
-        repoName: "the-Trio-JLZ.github.io",         // Replace with your repository name
-        token: "YOUR_GITHUB_TOKEN_HERE"      // For local testing only - REMOVE before deploying! FIXME:
+      // External form URLs (Google Forms / Microsoft Forms)
+      forms: {
+        contact: "https://forms.gle/YOUR_CONTACT_FORM_ID",        // TODO: Replace with actual form URL
+        print: "https://forms.gle/YOUR_3DPRINT_FORM_ID",          // TODO: Replace with actual form URL
+        laptop: "https://forms.gle/YOUR_LAPTOP_FORM_ID"           // TODO: Replace with actual form URL
       }
     };
   </script>
-  <script src="assets/js/app.js?v=1.0.1"></script>
+  <script src="assets/js/app.js?v=1.0.2"></script>
   <script src="assets/js/rss-parser.js"></script>
-  <script src="assets/js/github-forms.js"></script>
 </body>
 
 </html>

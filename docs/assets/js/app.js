@@ -9,60 +9,35 @@
     });
   });
 
-  // Modal helpers
-  function openModal(id){ const m = document.getElementById(id); if (m){ m.setAttribute('aria-hidden','false'); m.querySelector('input,textarea,select,button')?.focus(); } }
-  function closeModal(el){ el.setAttribute('aria-hidden','true'); }
+  // External form handlers - open Google/Microsoft Forms in new tab
+  function openExternalForm(formType) {
+    const config = window.__ACM_CONFIG__;
+    if (!config || !config.forms) {
+      console.error('Form configuration not found');
+      alert('Form not configured. Please contact us via Discord or email.');
+      return;
+    }
+    
+    const formUrl = config.forms[formType];
+    if (!formUrl || formUrl.includes('YOUR_')) {
+      console.warn(`${formType} form URL not configured`);
+      alert('This form is not yet set up. Please contact us via Discord or email.');
+      return;
+    }
+    
+    window.open(formUrl, '_blank', 'noopener,noreferrer');
+  }
 
-  // Wire open buttons
+  // Wire form buttons to open external forms
   const contactBtns = [
     document.getElementById('contactBtn'), 
     document.getElementById('contactBtnHero'),
     document.getElementById('researchContactBtn')
   ].filter(Boolean);
-  contactBtns.forEach(btn => btn.addEventListener('click', ()=>openModal('contactModal')));
-  document.getElementById('openPrintForm')?.addEventListener('click', ()=>openModal('printModal'));
-  document.getElementById('openLaptopForm')?.addEventListener('click', ()=>openModal('laptopModal'));
-
-  // Close buttons
-  document.querySelectorAll('[data-close]').forEach(btn => {
-    btn.addEventListener('click', ()=> closeModal(btn.closest('.modal')));
-  });
-  document.querySelectorAll('.modal').forEach(m => {
-    m.addEventListener('click', (e)=>{ if(e.target === m) closeModal(m); });
-  });
-
-  // Contact form AJAX
-  async function handleAjaxForm(formId, statusId, endpoint){
-    const form = document.getElementById(formId);
-    const status = document.getElementById(statusId);
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = 'Sending...';
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-
-      try {
-        const formData = new FormData(form);
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          body: formData
-        });
-        const json = await res.json();
-        if (json.ok) {
-          status.textContent = 'Thanks! We received your message.';
-          form.reset();
-        } else {
-          status.textContent = json.error || 'Something went wrong.';
-        }
-      } catch (err) {
-        status.textContent = 'Network error.';
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-  }
+  contactBtns.forEach(btn => btn.addEventListener('click', () => openExternalForm('contact')));
+  
+  document.getElementById('openPrintForm')?.addEventListener('click', () => openExternalForm('print'));
+  document.getElementById('openLaptopForm')?.addEventListener('click', () => openExternalForm('laptop'));
 
 
   // Load Board members from JSON with advisor featured prominently
