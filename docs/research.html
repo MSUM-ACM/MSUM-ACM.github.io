@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Opportunities - MSUM ACM</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .research-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .research-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    .research-intro p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .faculty-card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .faculty-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(175, 19, 41, 0.15);
+    }
+    
+    .faculty-header {
+      margin-bottom: 1.5rem;
+    }
+    
+    .faculty-name {
+      font-size: 1.5rem;
+      color: var(--brand);
+      margin: 0 0 0.5rem;
+      font-weight: 600;
+    }
+    
+    .faculty-title {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 0 0.25rem;
+    }
+    
+    .faculty-dept {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    .faculty-bio {
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .faculty-interests {
+      margin-bottom: 1.5rem;
+    }
+    
+    .faculty-interests h4 {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin: 0 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .interests-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .interest-tag {
+      background: rgba(224, 160, 47, 0.1);
+      color: var(--accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(224, 160, 47, 0.2);
+    }
+    
+    .faculty-contact {
+      margin-top: auto;
+    }
+    
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .contact-btn:hover {
+      background: #b8142a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(175, 19, 41, 0.3);
+    }
+    
+    .contact-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    @media (max-width: 768px) {
+      .faculty-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .research-intro h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/ACM_Logo.svg" alt="MSUM ACM Logo" class="logo-img" />
+        <span>MSUM ACM</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#board">Board</a>
+        <a href="index.html#events">Events</a>
+        <a href="guides.html">Guides</a>
+        <a href="research.html">Research</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top: 120px; min-height: 100vh;">
+    <div class="container">
+      <div class="research-intro">
+        <h1>Research Opportunities</h1>
+        <p>Explore research opportunities with our distinguished faculty members. Whether you're interested in artificial intelligence, cybersecurity, software engineering, or data science, our professors are actively seeking motivated students to collaborate on cutting-edge projects.</p>
+      </div>
+
+      <div class="faculty-grid">
+        <!-- Juan Cabanela -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <h3 class="faculty-name">Dr. Juan Cabanela</h3>
+            <p class="faculty-title">Interim Department Chair, Professor</p>
+            <p class="faculty-dept">Computer Science & Information Systems</p>
+          </div>
+          <div class="faculty-bio">
+            <p>Dr. Cabanela holds a Ph.D. from the University of Minnesota-Twin Cities and a B.A. from Carleton College. As both an educator and researcher, he brings extensive experience in computational science and interdisciplinary research.</p>
+          </div>
+          <div class="faculty-interests">
+            <h4>Research Interests</h4>
+            <div class="interests-list">
+              <span class="interest-tag">Computational Science</span>
+              <span class="interest-tag">Data Analysis</span>
+              <span class="interest-tag">Astronomy & Computing</span>
+            </div>
+          </div>
+          <div class="faculty-contact">
+            <a href="mailto:cabanela@mnstate.edu" class="contact-btn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              Contact Dr. Cabanela
+            </a>
+          </div>
+        </div>
+
+        <!-- Andrew Chen -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <h3 class="faculty-name">Dr. Andrew Chen</h3>
+            <p class="faculty-title">Professor</p>
+            <p class="faculty-dept">Computer Science & Information Systems</p>
+          </div>
+          <div class="faculty-bio">
+            <p>Dr. Chen is a Professor with expertise in software engineering, artificial intelligence, and machine learning. He is passionate about advancing research in intelligent systems and mentoring students in innovative computing projects.</p>
+          </div>
+          <div class="faculty-interests">
+            <h4>Research Interests</h4>
+            <div class="interests-list">
+              <span class="interest-tag">Software Engineering</span>
+              <span class="interest-tag">Artificial Intelligence</span>
+              <span class="interest-tag">Machine Learning</span>
+            </div>
+          </div>
+          <div class="faculty-contact">
+            <a href="mailto:chen@mnstate.edu" class="contact-btn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              Contact Dr. Chen
+            </a>
+          </div>
+        </div>
+
+        <!-- Pranay Prateek -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <h3 class="faculty-name">Dr. Pranay Prateek</h3>
+            <p class="faculty-title">Assistant Professor of Cybersecurity</p>
+            <p class="faculty-dept">Computer Science & Information Systems</p>
+          </div>
+          <div class="faculty-bio">
+            <p>Dr. Prateek holds a Ph.D. in Business Computer Information Systems from the University of North Texas, an M.S. in Business Analytics (Data Science) from UT Dallas, and a B.E. in Electrical and Electronics Engineering from Manipal Institute of Technology. His research spans crowdfunding, mental health applications, AI, and cybersecurity using advanced methodologies including game theory, optimization, and experimental design.</p>
+          </div>
+          <div class="faculty-interests">
+            <h4>Research Interests</h4>
+            <div class="interests-list">
+              <span class="interest-tag">Crowdfunding</span>
+              <span class="interest-tag">Mental Health</span>
+              <span class="interest-tag">Artificial Intelligence</span>
+              <span class="interest-tag">Cybersecurity</span>
+              <span class="interest-tag">Text Analytics</span>
+            </div>
+          </div>
+          <div class="faculty-contact">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <a href="https://scholar.google.com/citations?hl=en&user=fRaRO5YAAAAJ" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 4px;">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                </svg>
+                Google Scholar
+              </a>
+              <span style="color: var(--muted);">|</span>
+              <a href="https://readership.works.bepress.com/?dashboardToken=64d12b5b320f5a0a0b7db99aSxIZ22M748aiUKCsOK0I0eZILOX4DYB2XcJKCw8I#/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 4px;">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                Publications
+              </a>
+            </div>
+            <a href="mailto:prateekp@mnstate.edu" class="contact-btn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              Contact Dr. Prateek
+            </a>
+          </div>
+        </div>
+
+        <!-- Adaeze Nwaigwe -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <h3 class="faculty-name">Dr. Adaeze Nwaigwe</h3>
+            <p class="faculty-title">Associate Professor</p>
+            <p class="faculty-dept">Computer Science & Information Systems</p>
+          </div>
+          <div class="faculty-bio">
+            <p>Dr. Nwaigwe holds a Ph.D., M.S., and B.EN., bringing a wealth of knowledge in software development, database systems, and information systems. She is committed to fostering research that bridges theory and practical applications in computing.</p>
+          </div>
+          <div class="faculty-interests">
+            <h4>Research Interests</h4>
+            <div class="interests-list">
+              <span class="interest-tag">Software Development</span>
+              <span class="interest-tag">Database Systems</span>
+              <span class="interest-tag">Information Systems</span>
+            </div>
+          </div>
+          <div class="faculty-contact">
+            <a href="mailto:nwaigwea@mnstate.edu" class="contact-btn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              Contact Dr. Nwaigwe
+            </a>
+          </div>
+        </div>
+
+        <!-- Tim Preuss -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <h3 class="faculty-name">Tim Preuss</h3>
+            <p class="faculty-title">Adjunct Faculty</p>
+            <p class="faculty-dept">Computer Science & Information Systems</p>
+          </div>
+          <div class="faculty-bio">
+            <p>Tim Preuss brings industry experience and practical knowledge to the classroom and research environment. His focus on applied computing and real-world problem solving provides students with valuable insights into professional software development.</p>
+          </div>
+          <div class="faculty-interests">
+            <h4>Research Interests</h4>
+            <div class="interests-list">
+              <span class="interest-tag">Applied Computing</span>
+              <span class="interest-tag">Software Development</span>
+              <span class="interest-tag">Industry Applications</span>
+            </div>
+          </div>
+          <div class="faculty-contact">
+            <a href="mailto:preusst@mnstate.edu" class="contact-btn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              Contact Tim Preuss
+            </a>
+          </div>
+        </div>
+
+        <!-- Ronni Kurtzhals -->
+        <div class="faculty-card">
+          <div class="faculty-header">
+            <h3 class="faculty-name">Ronni Kurtzhals</h3>
+            <p class="faculty-title">Adjunct Faculty</p>
+            <p class="faculty-dept">Computer Science & Information Systems</p>
+          </div>
+          <div class="faculty-bio">
+            <p>Ronni Kurtzhals holds a B.A.S. and contributes practical expertise in computing and information systems. With a focus on applied technologies and student mentorship, Ronni helps students develop the skills needed for success in technology careers.</p>
+          </div>
+          <div class="faculty-interests">
+            <h4>Research Interests</h4>
+            <div class="interests-list">
+              <span class="interest-tag">Information Systems</span>
+              <span class="interest-tag">Applied Technologies</span>
+              <span class="interest-tag">Computing Education</span>
+            </div>
+          </div>
+          <div class="faculty-contact">
+            <a href="mailto:kurtzhals@mnstate.edu" class="contact-btn">
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              Contact Ronni Kurtzhals
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="section" style="background: var(--panel); border-top: 1px solid var(--panel-border); padding: 40px 0; margin-top: 60px;">
+    <div class="container" style="text-align: center;">
+      <p style="margin: 0 0 10px; color: var(--muted);">Minnesota State University Moorhead</p>
+      <p style="margin: 0 0 20px; color: var(--text);">Association for Computing Machinery</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:msumacm@mnstate.edu" style="color: var(--brand); text-decoration: none;">msumacm@mnstate.edu</a>
+        <a href="https://discord.gg/GKy9htGXau" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">Discord</a>
+        <a href="https://github.com/the-Trio-JLZ" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
