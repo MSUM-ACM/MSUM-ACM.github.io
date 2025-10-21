@@ -1,8 +1,9 @@
-# Fetches an RSS feed, updates data/rss.json with new items, and writes a last_seen.txt marker.
-# Usage: python scripts/fetch_rss.py --url "https://example.com/feed.xml"
+# Fetches ACM events from Dragon Central RSS feed and updates docs/data/events.json
+# Usage: python automation/scripts/fetch_rss.py
 
-import argparse, hashlib, json, os, sys, time
+import hashlib, json, os, sys, re
 from datetime import datetime, timezone
+from xml.etree import ElementTree as ET
 
 try:
     import feedparser
@@ -14,24 +15,44 @@ except ImportError:
     sys.exit(2)
 
 
-def parse_args():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--url", required=True, help="RSS/Atom feed URL")
-    ap.add_argument(
-        "--output", default="data/rss.json", help="Path to JSON output file"
-    )
-    ap.add_argument(
-        "--state",
-        default=".rss_last_seen.txt",
-        help="Path to marker file for last seen item",
-    )
-    return ap.parse_args()
+# ACM Dragon Central RSS Feed
+ACM_RSS_URL = "https://mnstate.campuslabs.com/engage/organization/msum_acm/events.rss"
+OUTPUT_FILE = "docs/data/events.json"
 
 
 def item_key(entry):
-    # Create a stable key using id/link/title+published
+    """Create a stable key using id/link/title"""
     basis = entry.get("id") or entry.get("link") or entry.get("title", "")
     return hashlib.sha1(basis.encode("utf-8", "ignore")).hexdigest()[:16]
+
+
+def clean_html(raw_html):
+    """Remove HTML tags and clean up text"""
+    if not raw_html:
+        return ""
+    # Remove HTML tags
+    clean = re.sub(r'<[^>]+>', '', raw_html)
+    # Decode HTML entities
+    clean = re.sub(r'&nbsp;', ' ', clean)
+    clean = re.sub(r'&amp;', '&', clean)
+    clean = re.sub(r'&lt;', '<', clean)
+    clean = re.sub(r'&gt;', '>', clean)
+    # Clean up whitespace
+    clean = re.sub(r'\s+', ' ', clean).strip()
+    # Truncate if too long
+    if len(clean) > 300:
+        clean = clean[:297] + "..."
+    return clean
+
+
+def extract_author(entry):
+    """Extract clean author/host name"""
+    author = entry.get("author", "MSUM ACM")
+    # Remove email format: "email@example.com (Name)" -> "Name"
+    match = re.search(r'\(([^)]+)\)', author)
+    if match:
+        return match.group(1)
+    return author
 
 
 def iso_now():
@@ -39,54 +60,94 @@ def iso_now():
 
 
 def main():
-    args = parse_args()
-    feed = feedparser.parse(args.url)
+    print(f"Fetching ACM events from: {ACM_RSS_URL}")
+    
+    feed = feedparser.parse(ACM_RSS_URL)
     if feed.bozo:
         print("Feed parse error.", file=sys.stderr)
-        sys.exit(3)
+        # Don't fail completely - might be temporary network issue
+        # Keep existing events file intact
+        sys.exit(0)
 
-    os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    items = []
-    if os.path.exists(args.output):
-        with open(args.output, "r", encoding="utf-8") as f:
+    # Create output directory if needed
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+    
+    # Load existing events
+    existing_events = []
+    if os.path.exists(OUTPUT_FILE):
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
             try:
-                items = json.load(f)
-            except Exception:
-                items = []
+                data = json.load(f)
+                if isinstance(data, dict) and "events" in data:
+                    existing_events = data.get("events", [])
+                elif isinstance(data, list):
+                    existing_events = data
+            except Exception as e:
+                print(f"Error loading existing events: {e}", file=sys.stderr)
+                existing_events = []
 
-    seen = set(i.get("key") for i in items if "key" in i)
-
+    # Track seen events
+    seen = set(e.get("key") for e in existing_events if "key" in e)
+    
+    # Process new events
+    events = []
     new_count = 0
-    for e in feed.entries[:50]:
-        key = item_key(e)
+    
+    for entry in feed.entries[:50]:  # Limit to 50 most recent
+        key = item_key(entry)
+        
+        # Check if we've already processed this event
         if key in seen:
+            # Keep existing event data
+            for existing in existing_events:
+                if existing.get("key") == key:
+                    events.append(existing)
+                    break
             continue
-        items.append(
-            {
-                "key": key,
-                "title": e.get("title", "").strip(),
-                "link": e.get("link", ""),
-                "published": e.get("published", ""),
-                "summary": e.get("summary", ""),
-                "fetched_at": iso_now(),
-            }
-        )
+        
+        # Parse new event
+        event = {
+            "key": key,
+            "title": entry.get("title", "Untitled Event").strip(),
+            "link": entry.get("link", ""),
+            "description": clean_html(entry.get("summary", "")),
+            "author": extract_author(entry),
+            "host": extract_author(entry),
+            "pubDate": entry.get("published", ""),
+            "start": entry.get("ev_startdate", entry.get("published", "")),
+            "end": entry.get("ev_enddate", ""),
+            "location": entry.get("ev_location", "TBA"),
+            "categories": [tag.get("term", "") for tag in entry.get("tags", [])],
+            "fetched_at": iso_now()
+        }
+        
+        events.append(event)
         seen.add(key)
         new_count += 1
-
+    
+    # Sort by start date (newest first)
+    def get_date(event):
+        return event.get("start") or event.get("pubDate") or event.get("fetched_at") or ""
+    
+    events.sort(key=get_date, reverse=True)
+    
+    # Write output with metadata
+    output = {
+        "lastUpdated": iso_now(),
+        "totalEvents": len(events),
+        "events": events,
+        "message": "Events automatically updated by GitHub Actions every 6 hours"
+    }
+    
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    
     if new_count > 0:
-        # Sort newest first by published or fetched_at
-        def ts(v):
-            return v.get("published") or v.get("fetched_at")
-
-        items.sort(key=lambda v: ts(v) or "", reverse=True)
-        with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Added {new_count} new item(s).")
-        sys.exit(0)
+        print(f"✅ Added {new_count} new event(s). Total events: {len(events)}")
     else:
-        print("No new items.")
-        sys.exit(0)
+        print(f"✅ No new events. Total events: {len(events)}")
+    
+    sys.exit(0)
 
 
 if __name__ == "__main__":
