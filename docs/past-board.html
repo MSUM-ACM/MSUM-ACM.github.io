@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past Board Members - MSUM ACM</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .board-intro {
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .board-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    .board-intro p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    
+    .year-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    
+    .year-filter {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    
+    .year-filter:hover {
+      background: rgba(175, 19, 41, 0.1);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+    
+    .year-filter.active {
+      background: var(--brand);
+      color: white;
+      border-color: var(--brand);
+    }
+    
+    .year-section {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    .year-section.active {
+      display: block;
+    }
+    
+    .year-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .year-header h2 {
+      font-size: 2rem;
+      color: var(--brand);
+      margin-bottom: 0.5rem;
+    }
+    
+    .year-header p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    
+    .past-board-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .past-member-card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+    
+    .past-member-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(175, 19, 41, 0.15);
+    }
+    
+    .past-member-name {
+      font-size: 1.35rem;
+      color: var(--text);
+      margin: 0 0 0.5rem;
+      font-weight: 600;
+    }
+    
+    .past-member-role {
+      color: var(--brand);
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0 0 1rem;
+    }
+    
+    .past-member-info {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    .past-member-info p {
+      margin: 0.35rem 0;
+    }
+    
+    .info-label {
+      color: var(--accent);
+      font-weight: 500;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 768px) {
+      .board-intro h1 {
+        font-size: 2rem;
+      }
+      
+      .year-filters {
+        gap: 0.5rem;
+      }
+      
+      .year-filter {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/ACM_Logo.svg" alt="MSUM ACM Logo" class="logo-img" />
+        <span>MSUM ACM</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#board">Board</a>
+        <a href="index.html#events">Events</a>
+        <a href="guides.html">Guides</a>
+        <a href="research.html">Research</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top: 120px; min-height: 100vh;">
+    <div class="container">
+      <div class="board-intro">
+        <h1>Past Board Members</h1>
+        <p>Honoring the leaders who have shaped MSUM ACM over the years. These dedicated individuals have contributed their time, skills, and passion to building our community.</p>
+      </div>
+
+      <div class="year-filters" id="yearFilters">
+        <!-- Filters will be dynamically generated -->
+      </div>
+
+      <div id="boardContent">
+        <!-- Board sections will be dynamically generated -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="section" style="background: var(--panel); border-top: 1px solid var(--panel-border); padding: 40px 0; margin-top: 60px;">
+    <div class="container" style="text-align: center;">
+      <p style="margin: 0 0 10px; color: var(--muted);">Minnesota State University Moorhead</p>
+      <p style="margin: 0 0 20px; color: var(--text);">Association for Computing Machinery</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:msumacm@mnstate.edu" style="color: var(--brand); text-decoration: none;">msumacm@mnstate.edu</a>
+        <a href="https://discord.gg/GKy9htGXau" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">Discord</a>
+        <a href="https://github.com/the-Trio-JLZ" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let boardHistory = {};
+    let currentYear = null;
+
+    // Fetch board history data
+    fetch('data/board-history.json')
+      .then(response => response.json())
+      .then(data => {
+        boardHistory = data;
+        initializePage();
+      })
+      .catch(error => {
+        console.error('Error loading board history:', error);
+        document.getElementById('boardContent').innerHTML = 
+          '<p style="text-align: center; color: var(--muted); padding: 2rem;">Unable to load board history at this time.</p>';
+      });
+
+    function initializePage() {
+      const years = Object.keys(boardHistory).sort((a, b) => b - a);
+      
+      if (years.length === 0) {
+        document.getElementById('boardContent').innerHTML = 
+          '<p style="text-align: center; color: var(--muted); padding: 2rem;">No past board members to display.</p>';
+        return;
+      }
+
+      // Create year filters
+      const filtersContainer = document.getElementById('yearFilters');
+      years.forEach((year, index) => {
+        const button = document.createElement('button');
+        button.className = 'year-filter' + (index === 0 ? ' active' : '');
+        button.textContent = year;
+        button.onclick = () => showYear(year);
+        filtersContainer.appendChild(button);
+      });
+
+      // Create year sections
+      const contentContainer = document.getElementById('boardContent');
+      years.forEach((year, index) => {
+        const section = createYearSection(year, boardHistory[year]);
+        section.className = 'year-section' + (index === 0 ? ' active' : '');
+        contentContainer.appendChild(section);
+      });
+
+      currentYear = years[0];
+    }
+
+    function createYearSection(year, data) {
+      const section = document.createElement('div');
+      section.id = `year-${year}`;
+      section.className = 'year-section';
+
+      // Year header
+      const header = document.createElement('div');
+      header.className = 'year-header';
+      header.innerHTML = `
+        <h2>${year} Board</h2>
+        <p>Academic Year ${parseInt(year) - 1}-${year}</p>
+      `;
+      section.appendChild(header);
+
+      // Grid container
+      const grid = document.createElement('div');
+      grid.className = 'past-board-grid';
+
+      // Add advisor if exists
+      if (data.advisor) {
+        const advisorCard = createAdvisorCard(data.advisor);
+        grid.appendChild(advisorCard);
+      }
+
+      // Add members
+      if (data.members && data.members.length > 0) {
+        data.members.forEach(member => {
+          const card = createMemberCard(member);
+          grid.appendChild(card);
+        });
+      }
+
+      section.appendChild(grid);
+      return section;
+    }
+
+    function createAdvisorCard(advisor) {
+      const card = document.createElement('div');
+      card.className = 'past-member-card';
+      card.style.gridColumn = '1 / -1';
+      card.style.maxWidth = '500px';
+      
+      card.innerHTML = `
+        <h3 class="past-member-name">${advisor.name}</h3>
+        <p class="past-member-role">${advisor.role}</p>
+        <div class="past-member-info">
+          <p>${advisor.bio || ''}</p>
+        </div>
+      `;
+      
+      return card;
+    }
+
+    function createMemberCard(member) {
+      const card = document.createElement('div');
+      card.className = 'past-member-card';
+      
+      let infoHTML = '';
+      if (member.graduated) {
+        infoHTML += `<p><span class="info-label">Graduated:</span> ${member.graduated}</p>`;
+      }
+      if (member.major) {
+        infoHTML += `<p><span class="info-label">Major:</span> ${member.major}</p>`;
+      }
+      if (member.bio) {
+        infoHTML += `<p style="margin-top: 0.75rem;">${member.bio}</p>`;
+      }
+      
+      card.innerHTML = `
+        <h3 class="past-member-name">${member.name}</h3>
+        <p class="past-member-role">${member.role}</p>
+        <div class="past-member-info">
+          ${infoHTML}
+        </div>
+      `;
+      
+      return card;
+    }
+
+    function showYear(year) {
+      // Update filter buttons
+      document.querySelectorAll('.year-filter').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent === year) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Update sections
+      document.querySelectorAll('.year-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(`year-${year}`).classList.add('active');
+      
+      currentYear = year;
+    }
+  </script>
+</body>
+</html>
