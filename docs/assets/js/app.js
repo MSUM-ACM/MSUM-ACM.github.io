@@ -118,6 +118,217 @@
     });
   }
 
+  // Load photo gallery from JSON with filtering and pagination
+  const photoGallery = document.getElementById('photoGallery');
+  const galleryFilters = document.getElementById('galleryFilters');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  
+  if (photoGallery && galleryFilters) {
+    let allYearsData = [];
+    let currentYear = null;
+    let currentImages = [];
+    let displayedCount = 0;
+    const IMAGES_PER_PAGE = 12;
+    let lightboxIndex = 0;
+    
+    fetch('data/gallery.json')
+      .then(r => r.json())
+      .then(data => {
+        allYearsData = data.years;
+        
+        // Create filter buttons
+        const allBtn = document.createElement('button');
+        allBtn.className = 'filter-btn';
+        allBtn.textContent = 'All Years';
+        allBtn.onclick = () => filterByYear(null);
+        galleryFilters.appendChild(allBtn);
+        
+        data.years.forEach(yearData => {
+          if (yearData.images && yearData.images.length > 0) {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn';
+            btn.textContent = yearData.label;
+            btn.onclick = () => filterByYear(yearData);
+            galleryFilters.appendChild(btn);
+          }
+        });
+        
+        // Initialize with 2025-2026 (first year with images)
+        const defaultYear = data.years.find(y => y.label === '2025-2026') || data.years[0];
+        filterByYear(defaultYear, true);
+      })
+      .catch(err => {
+        console.error('Gallery error:', err);
+        photoGallery.innerHTML = '<p style="text-align:center;color:var(--muted)">Unable to load photos. Please check back later.</p>';
+      });
+    
+    function filterByYear(yearData, isInitial = false) {
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      if (!isInitial && event && event.target) {
+        event.target.classList.add('active');
+      } else if (isInitial) {
+        // Set active button for initial load (2025-2026)
+        const targetBtn = Array.from(document.querySelectorAll('.filter-btn')).find(btn => 
+          btn.textContent === (yearData ? yearData.label : 'All Years')
+        );
+        if (targetBtn) targetBtn.classList.add('active');
+      }
+      
+      // Clear gallery
+      photoGallery.innerHTML = '';
+      displayedCount = 0;
+      
+      // Get images for selected year or all years
+      if (yearData === null) {
+        // Combine all images from all years
+        currentImages = [];
+        allYearsData.forEach(year => {
+          if (year.images && year.images.length > 0) {
+            year.images.forEach(img => {
+              currentImages.push({
+                filename: img,
+                folder: year.folder
+              });
+            });
+          }
+        });
+      } else {
+        currentYear = yearData;
+        currentImages = yearData.images.map(img => ({
+          filename: img,
+          folder: yearData.folder
+        }));
+      }
+      
+      // Shuffle for variety
+      currentImages.sort(() => Math.random() - 0.5);
+      
+      // Load first batch
+      loadMoreImages();
+    }
+    
+    function loadMoreImages() {
+      const nextBatch = currentImages.slice(displayedCount, displayedCount + IMAGES_PER_PAGE);
+      
+      nextBatch.forEach((imageData, index) => {
+        const img = document.createElement('img');
+        img.src = `assets/img/gallery/${imageData.folder}/${encodeURIComponent(imageData.filename)}`;
+        img.alt = 'ACM Event Photo';
+        img.loading = 'lazy';
+        img.style.opacity = '1';
+        img.style.visibility = 'visible';
+        img.style.cursor = 'pointer';
+        
+        // Add click handler for lightbox
+        const imgIndex = displayedCount + index;
+        img.onclick = () => openLightbox(imgIndex);
+        
+        img.onerror = function() {
+          console.error('✗ Failed to load:', imageData.filename);
+          this.remove();
+        };
+        
+        photoGallery.appendChild(img);
+      });
+      
+      displayedCount += nextBatch.length;
+      
+      // Show/hide load more button
+      const loadMoreContainer = document.querySelector('.gallery-load-more');
+      if (displayedCount < currentImages.length) {
+        loadMoreContainer.style.display = 'block';
+      } else {
+        loadMoreContainer.style.display = 'none';
+      }
+      
+      console.log(`Displayed ${displayedCount} of ${currentImages.length} images`);
+    }
+    
+    // Lightbox functionality
+    function openLightbox(index) {
+      lightboxIndex = index;
+      
+      // Create lightbox if it doesn't exist
+      let lightbox = document.getElementById('lightbox');
+      if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'lightbox';
+        lightbox.innerHTML = `
+          <span class="lightbox-close">&times;</span>
+          <button class="lightbox-prev">&#10094;</button>
+          <button class="lightbox-next">&#10095;</button>
+          <img class="lightbox-img" src="" alt="Photo">
+          <div class="lightbox-counter"></div>
+        `;
+        document.body.appendChild(lightbox);
+        
+        // Event listeners
+        lightbox.querySelector('.lightbox-close').onclick = closeLightbox;
+        lightbox.querySelector('.lightbox-prev').onclick = (e) => {
+          e.stopPropagation();
+          navigateLightbox(-1);
+        };
+        lightbox.querySelector('.lightbox-next').onclick = (e) => {
+          e.stopPropagation();
+          navigateLightbox(1);
+        };
+        lightbox.onclick = (e) => {
+          if (e.target === lightbox) closeLightbox();
+        };
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', handleLightboxKeyboard);
+      }
+      
+      updateLightboxImage();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    function navigateLightbox(direction) {
+      lightboxIndex += direction;
+      
+      // Loop around
+      if (lightboxIndex < 0) lightboxIndex = currentImages.length - 1;
+      if (lightboxIndex >= currentImages.length) lightboxIndex = 0;
+      
+      updateLightboxImage();
+    }
+    
+    function updateLightboxImage() {
+      const lightbox = document.getElementById('lightbox');
+      const img = lightbox.querySelector('.lightbox-img');
+      const counter = lightbox.querySelector('.lightbox-counter');
+      const imageData = currentImages[lightboxIndex];
+      
+      img.src = `assets/img/gallery/${imageData.folder}/${encodeURIComponent(imageData.filename)}`;
+      counter.textContent = `${lightboxIndex + 1} / ${currentImages.length}`;
+    }
+    
+    function handleLightboxKeyboard(e) {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox || !lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      else if (e.key === 'ArrowRight') navigateLightbox(1);
+    }
+    
+    // Load more button handler
+    if (loadMoreBtn) {
+      loadMoreBtn.onclick = loadMoreImages;
+    }
+  }
+
   // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,

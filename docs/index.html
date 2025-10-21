@@ -161,7 +161,7 @@
         <h2>Laptop Borrowing Program</h2>
         <p class="section-subtitle">Need reliable computing power for coursework, projects, or events? Our laptop borrowing program provides short-term access to quality laptops.</p>
         <div class="section-actions">
-          <button id="openLaptopForm" class="btn">Borrow a Laptop</button>
+          <button onclick="window.open('https://forms.cloud.microsoft/r/RDBUVJEyvG', '_blank')" class="btn">Borrow a Laptop</button>
         </div>
       </div>
     </section>
@@ -170,7 +170,17 @@
       <div class="container">
         <h2>ACM in Action</h2>
         <p class="section-subtitle">See what we've been up to! From intense hackathon sessions to casual study groups, these photos capture the energy and community spirit that makes MSUM ACM special.</p>
-        <div id="photoGallery" class="grid gallery"></div>
+        
+        <!-- Year filter buttons -->
+        <div id="galleryFilters" class="gallery-filters"></div>
+        
+        <!-- Photo gallery -->
+        <div id="photoGallery"></div>
+        
+        <!-- Load more button -->
+        <div class="gallery-load-more" style="text-align: center; margin-top: 2rem; display: none;">
+          <button id="loadMoreBtn" class="btn">Load More Photos</button>
+        </div>
       </div>
     </section>
   </main>
@@ -190,7 +200,7 @@
       forms: {
         contact: "https://forms.gle/YOUR_CONTACT_FORM_ID",        // TODO: Replace with actual form URL
         print: "https://forms.gle/YOUR_3DPRINT_FORM_ID",          // TODO: Replace with actual form URL
-        laptop: "https://forms.gle/YOUR_LAPTOP_FORM_ID"           // TODO: Replace with actual form URL
+        laptop: "https://forms.cloud.microsoft/r/RDBUVJEyvG"           // TODO: Replace with actual form URL
       }
     };
   </script>
