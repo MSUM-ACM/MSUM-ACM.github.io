@@ -94,17 +94,17 @@
       const socialLabel = isInstagram ? 'Instagram' : 'GitHub';
       
       card.innerHTML = `
-        <div class="card-inner" style="background:var(--panel);border:1px solid var(--panel-border);border-radius:14px;padding:14px">
+        <div class="card-inner" style="background:var(--panel);border:1px solid var(--panel-border);border-radius:14px;padding:14px;display:flex;flex-direction:column;height:100%">
           <img src="${avatarUrl}" alt="${m.name}" style="width:100%;aspect-ratio:1/1;border-radius:10px;margin-bottom:10px;object-fit:cover" />
           <strong style="color:var(--text)">${m.name}</strong><br/>
           <span class="muted">${m.role} · ${m.years}</span>
-          <p style="margin-top:8px;color:var(--text)">${m.bio}</p>
-          <p style="margin-top:10px">
+          <p style="margin-top:8px;color:var(--text);flex-grow:1">${m.bio}</p>
+          <div style="margin-top:10px;text-align:center">
             <a href="${m.github_url}" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:none;display:inline-flex;align-items:center;gap:4px">
               ${socialIcon}
               ${socialLabel}
             </a>
-          </p>
+          </div>
         </div>
       `;
       grid.appendChild(card);
