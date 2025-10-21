@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developer Guides - MSUM ACM</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/ACM_Logo.svg" />
+  <link rel="alternate icon" type="image/png" href="assets/img/ACM_Logo.png" />
+  <!-- Google Fonts: Inter (primary) & Poppins (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=0.14" />
+  <style>
+    .guides-hero {
+      background: linear-gradient(135deg, var(--bg) 0%, var(--panel) 100%);
+      padding: 80px 0 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    .guides-hero h1 {
+      font-size: 3em;
+      margin: 0 0 20px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--brand) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .guides-nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .guides-nav a {
+      padding: 12px 24px;
+      background: var(--panel);
+      border: 2px solid var(--panel-border);
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .guides-nav a:hover {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .guide-section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    .guide-section:last-child {
+      border-bottom: none;
+    }
+    .guide-section h2 {
+      font-size: 2.5em;
+      margin: 0 0 10px;
+      color: var(--accent);
+    }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .steps-list {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+    }
+    .steps-list li {
+      counter-increment: step-counter;
+      padding: 20px;
+      margin: 20px 0;
+      background: var(--panel);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      position: relative;
+    }
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: -20px;
+      top: 20px;
+      background: var(--accent);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .steps-list li strong {
+      display: block;
+      color: var(--accent);
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .code-block {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 15px 0;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+    .code-block code {
+      color: #9cdcfe;
+    }
+    .note-box {
+      background: rgba(175, 19, 41, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .note-box strong {
+      color: var(--accent);
+    }
+    .command-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: var(--panel);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .command-table th {
+      background: var(--accent);
+      color: white;
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .command-table td {
+      padding: 15px;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    .command-table tr:last-child td {
+      border-bottom: none;
+    }
+    .command-table code {
+      background: rgba(0,0,0,0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      margin: 40px 0;
+      transition: all 0.3s ease;
+    }
+    .back-home:hover {
+      background: #8B1028;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(175, 19, 41, 0.3);
+    }
+    @media (max-width: 768px) {
+      .guides-hero h1 {
+        font-size: 2em;
+      }
+      .steps-list li::before {
+        position: relative;
+        left: 0;
+        margin-bottom: 10px;
+      }
+      .steps-list li {
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/ACM_Logo.svg" alt="MSUM ACM Logo" class="logo-img" />
+        <span>MSUM ACM</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#board">Board</a>
+        <a href="index.html#events">Events</a>
+        <a href="guides.html">Guides</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#photos">Photos</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="guides-hero">
+    <div class="container">
+      <h1>Developer Guides</h1>
+      <p class="section-subtitle">Essential tools and tutorials for CS students at MSUM</p>
+      <div class="guides-nav">
+        <a href="#git-guide">Git & Version Control</a>
+        <a href="#server-guide">MSUM Server Access</a>
+        <a href="#wsl-guide">WSL Setup (Windows)</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- GIT GUIDE -->
+    <section id="git-guide" class="guide-section">
+      <div class="container guide-content">
+        <h2>📚 Git & Version Control</h2>
+        <p class="section-subtitle">Master the essential skill every software professional needs</p>
+        
+        <p>Git is the industry-standard version control system used by developers worldwide. Whether you're working on personal projects or collaborating with teams, Git helps you track changes, manage code, and work efficiently.</p>
+
+        <h3 style="margin-top: 40px; color: var(--text);">Essential Commands</h3>
+        <table class="command-table">
+          <thead>
+            <tr>
+              <th>Command</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git init</code></td>
+              <td>Initialize a new Git repository in your current directory</td>
+            </tr>
+            <tr>
+              <td><code>git clone &lt;url&gt;</code></td>
+              <td>Download a repository from GitHub/GitLab to your computer</td>
+            </tr>
+            <tr>
+              <td><code>git add .</code></td>
+              <td>Stage all changes in the current directory for commit</td>
+            </tr>
+            <tr>
+              <td><code>git commit -m "message"</code></td>
+              <td>Save staged changes with a descriptive message</td>
+            </tr>
+            <tr>
+              <td><code>git push</code></td>
+              <td>Upload your commits to the remote repository (GitHub)</td>
+            </tr>
+            <tr>
+              <td><code>git pull</code></td>
+              <td>Download latest changes from the remote repository</td>
+            </tr>
+            <tr>
+              <td><code>git status</code></td>
+              <td>Check which files have been modified or staged</td>
+            </tr>
+            <tr>
+              <td><code>git branch</code></td>
+              <td>List all branches in your repository</td>
+            </tr>
+            <tr>
+              <td><code>git checkout -b &lt;name&gt;</code></td>
+              <td>Create and switch to a new branch</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top: 40px; color: var(--text);">Branching Best Practices</h3>
+        <ul class="steps-list" style="margin-left: 20px;">
+          <li>
+            <strong>Main/Master Branch</strong>
+            <p>Keep your <code>main</code> branch stable and production-ready. Never commit directly to main when working on teams.</p>
+          </li>
+          <li>
+            <strong>Feature Branches</strong>
+            <p>Create a new branch for each feature: <code>git checkout -b feature/my-new-feature</code></p>
+          </li>
+          <li>
+            <strong>Descriptive Names</strong>
+            <p>Use clear branch names like <code>bugfix/login-error</code> or <code>feature/user-dashboard</code></p>
+          </li>
+          <li>
+            <strong>Regular Commits</strong>
+            <p>Commit often with meaningful messages. Good: "Add user authentication". Bad: "Fixed stuff".</p>
+          </li>
+        </ul>
+
+        <h3 style="margin-top: 40px; color: var(--text);">Learning Resources</h3>
+        <div style="display: grid; gap: 15px; margin-top: 20px;">
+          <a href="https://git-scm.com/" target="_blank" rel="noopener" style="padding: 15px; background: var(--panel); border-radius: 8px; text-decoration: none; color: var(--brand); border-left: 4px solid var(--brand);">
+            📖 Official Git Documentation
+          </a>
+          <a href="https://learngitbranching.js.org/" target="_blank" rel="noopener" style="padding: 15px; background: var(--panel); border-radius: 8px; text-decoration: none; color: var(--brand); border-left: 4px solid var(--brand);">
+            🎮 Interactive Git Tutorial (Highly Recommended!)
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener" style="padding: 15px; background: var(--panel); border-radius: 8px; text-decoration: none; color: var(--brand); border-left: 4px solid var(--brand);">
+            💻 GitHub - Host Your Code
+          </a>
+        </div>
+
+        <div class="note-box" style="margin-top: 30px;">
+          <strong>💡 Pro Tip:</strong> Join our Git workshops for hands-on experience and personalized guidance. We meet weekly and help students at all skill levels!
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVER ACCESS GUIDE -->
+    <section id="server-guide" class="guide-section">
+      <div class="container guide-content">
+        <h2>🖥️ MSUM Server Access Guide</h2>
+        <p class="section-subtitle">Connect to Smaug, Smoke, and Alduin for your CS courses</p>
+        
+        <p>MSUM provides three Linux servers for computer science students to develop and test server-side applications. These servers are essential for many CS courses including Server-Side Scripting, Network Programming, and Database courses.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+          <div style="background: var(--panel); padding: 20px; border-radius: 8px; text-align: center; border-top: 4px solid var(--accent);">
+            <h3 style="color: var(--accent); margin: 0 0 10px;">🐉 Smaug</h3>
+            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">smaug.cs.mnstate.edu</code>
+          </div>
+          <div style="background: var(--panel); padding: 20px; border-radius: 8px; text-align: center; border-top: 4px solid var(--brand);">
+            <h3 style="color: var(--brand); margin: 0 0 10px;">💨 Smoke</h3>
+            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">smoke.cs.mnstate.edu</code>
+          </div>
+          <div style="background: var(--panel); padding: 20px; border-radius: 8px; text-align: center; border-top: 4px solid #6B4E71;">
+            <h3 style="color: #6B4E71; margin: 0 0 10px;">🐲 Alduin</h3>
+            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">alduin.cs.mnstate.edu</code>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 50px; color: var(--text);">Setup Instructions</h3>
+        <ol class="steps-list">
+          <li>
+            <strong>Install Microsoft Authenticator</strong>
+            <p>Download Microsoft Authenticator on your phone from the App Store (iOS) or Google Play (Android). You'll need this for two-factor authentication.</p>
+          </li>
+          <li>
+            <strong>Enable MFA on your MSUM Account</strong>
+            <p>Visit <a href="https://aka.ms/mfasetup" target="_blank" rel="noopener" style="color: var(--brand);">aka.ms/mfasetup</a> and sign in with your MSUM credentials (StarID@go.mnstate.edu).</p>
+            <p>Follow the prompts to add Microsoft Authenticator as your authentication method.</p>
+          </li>
+          <li>
+            <strong>Generate SSH Keys (First Time Only)</strong>
+            <p>Open your terminal (PowerShell on Windows, Terminal on Mac/Linux) and run:</p>
+            <div class="code-block">ssh-keygen -t rsa -b 4096</div>
+            <p>Press Enter to accept the default file location. You can set a passphrase or leave it empty (press Enter twice).</p>
+            <div class="note-box">
+              <strong>📁 Note:</strong> Your SSH keys will be saved in <code>~/.ssh/</code> directory. The public key is <code>id_rsa.pub</code> and the private key is <code>id_rsa</code>. Never share your private key!
+            </div>
+          </li>
+          <li>
+            <strong>Copy Your Public Key</strong>
+            <p>Display your public key with this command:</p>
+            <div class="code-block">cat ~/.ssh/id_rsa.pub</div>
+            <p>Copy the entire output (starts with <code>ssh-rsa</code> and ends with your email/computer name).</p>
+          </li>
+          <li>
+            <strong>Connect to Broker Server</strong>
+            <p>First, you must connect through the broker server. This is a security gateway:</p>
+            <div class="code-block">ssh StarID@broker.mnstate.edu</div>
+            <p>Replace <code>StarID</code> with your actual MSUM StarID (lowercase). For example: <code>ab1234cd@broker.mnstate.edu</code></p>
+            <p>You'll be prompted for:</p>
+            <ul style="margin-top: 10px;">
+              <li>Your MSUM password</li>
+              <li>Microsoft Authenticator approval (check your phone)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Add SSH Key to Authorized Keys (One Time Setup)</strong>
+            <p>Once connected to broker, create the SSH directory if it doesn't exist:</p>
+            <div class="code-block">mkdir -p ~/.ssh<br>chmod 700 ~/.ssh</div>
+            <p>Then add your public key to authorized_keys:</p>
+            <div class="code-block">echo "YOUR_PUBLIC_KEY_HERE" >> ~/.ssh/authorized_keys<br>chmod 600 ~/.ssh/authorized_keys</div>
+            <p>Replace <code>YOUR_PUBLIC_KEY_HERE</code> with the public key you copied in step 4.</p>
+          </li>
+          <li>
+            <strong>Connect to CS Servers</strong>
+            <p>From the broker server, you can now SSH to any CS server:</p>
+            <div class="code-block"># Connect to Smaug<br>ssh smaug.cs.mnstate.edu<br><br># Or Smoke<br>ssh smoke.cs.mnstate.edu<br><br># Or Alduin<br>ssh alduin.cs.mnstate.edu</div>
+            <p>Since you've set up SSH keys, you won't need a password!</p>
+          </li>
+        </ol>
+
+        <h3 style="margin-top: 50px; color: var(--text);">Quick Reference</h3>
+        <div class="code-block">
+# Full connection sequence:<br>
+<br>
+# 1. Connect to broker (requires password + MFA)<br>
+ssh StarID@broker.mnstate.edu<br>
+<br>
+# 2. From broker, connect to a CS server (no password needed)<br>
+ssh smaug.cs.mnstate.edu<br>
+<br>
+# 3. Do your work on the server<br>
+# 4. When done, disconnect:<br>
+exit  # exits from CS server back to broker<br>
+exit  # exits from broker
+        </div>
+
+        <div class="note-box" style="margin-top: 30px;">
+          <strong>💡 Troubleshooting:</strong>
+          <ul style="margin: 10px 0 0 20px;">
+            <li>If you can't connect, make sure you've enrolled in MFA at <a href="https://aka.ms/mfasetup" target="_blank" style="color: var(--accent);">aka.ms/mfasetup</a></li>
+            <li>Use lowercase for your StarID</li>
+            <li>If SSH keys don't work, verify permissions: <code>chmod 600 ~/.ssh/authorized_keys</code></li>
+            <li>Need help? Come to ACM office hours or ask on Discord!</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WSL GUIDE -->
+    <section id="wsl-guide" class="guide-section">
+      <div class="container guide-content">
+        <h2>🪟 WSL Setup for Windows</h2>
+        <p class="section-subtitle">Run Linux natively on your Windows machine</p>
+        
+        <p>Windows Subsystem for Linux (WSL) lets you run a complete Linux environment directly on Windows without dual-booting or virtual machines. This is essential for CS students who need Linux tools for development, testing, and coursework.</p>
+
+        <h3 style="margin-top: 40px; color: var(--text);">Why Use WSL?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+          <div style="background: var(--panel); padding: 15px; border-radius: 8px;">
+            <strong style="color: var(--accent);">✅ Native Linux Tools</strong>
+            <p style="margin-top: 8px;">Access bash, gcc, python, and other Linux utilities directly on Windows</p>
+          </div>
+          <div style="background: var(--panel); padding: 15px; border-radius: 8px;">
+            <strong style="color: var(--accent);">✅ Better Performance</strong>
+            <p style="margin-top: 8px;">Much faster than virtual machines with less resource usage</p>
+          </div>
+          <div style="background: var(--panel); padding: 15px; border-radius: 8px;">
+            <strong style="color: var(--accent);">✅ File System Integration</strong>
+            <p style="margin-top: 8px;">Access Windows files from Linux and vice versa seamlessly</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 50px; color: var(--text);">Installation Steps</h3>
+        <ol class="steps-list">
+          <li>
+            <strong>Check Windows Version</strong>
+            <p>You need Windows 10 version 2004+ (Build 19041+) or Windows 11. To check:</p>
+            <p>Press <code>Win + R</code>, type <code>winver</code>, and press Enter.</p>
+          </li>
+          <li>
+            <strong>Install WSL (Easy Method)</strong>
+            <p>Open PowerShell as Administrator (right-click Start → Windows PowerShell (Admin)) and run:</p>
+            <div class="code-block">wsl --install</div>
+            <p>This single command will:</p>
+            <ul style="margin-top: 10px;">
+              <li>Enable WSL and Virtual Machine Platform features</li>
+              <li>Download and install Ubuntu (default Linux distribution)</li>
+              <li>Set up everything automatically</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Restart your computer</strong> when prompted.</p>
+          </li>
+          <li>
+            <strong>Set Up Ubuntu</strong>
+            <p>After restart, Ubuntu will launch automatically. You'll be asked to:</p>
+            <ul style="margin-top: 10px;">
+              <li>Create a username (can be different from your Windows username)</li>
+              <li>Set a password (you won't see characters as you type - this is normal!)</li>
+            </ul>
+            <div class="note-box">
+              <strong>⚠️ Important:</strong> Remember this password! You'll need it for sudo commands.
+            </div>
+          </li>
+          <li>
+            <strong>Update Your System</strong>
+            <p>Once setup is complete, update Ubuntu packages:</p>
+            <div class="code-block">sudo apt update && sudo apt upgrade -y</div>
+          </li>
+          <li>
+            <strong>Install Essential Development Tools</strong>
+            <p>Install build-essential (includes gcc, g++, make):</p>
+            <div class="code-block">sudo apt install build-essential git curl wget -y</div>
+          </li>
+        </ol>
+
+        <h3 style="margin-top: 50px; color: var(--text);">Using WSL</h3>
+        <div class="code-block">
+# Open WSL from PowerShell or Command Prompt:<br>
+wsl<br>
+<br>
+# Or search for "Ubuntu" in Windows Start menu<br>
+<br>
+# Access Windows files from WSL:<br>
+cd /mnt/c/Users/YourName/Documents<br>
+<br>
+# Access WSL files from Windows:<br>
+# In File Explorer, type: \\wsl$\Ubuntu\home\yourusername<br>
+<br>
+# Install packages:<br>
+sudo apt install package-name<br>
+<br>
+# Exit WSL:<br>
+exit
+        </div>
+
+        <h3 style="margin-top: 50px; color: var(--text);">Useful WSL Commands</h3>
+        <table class="command-table">
+          <thead>
+            <tr>
+              <th>Command (PowerShell)</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>wsl</code></td>
+              <td>Start your default Linux distribution</td>
+            </tr>
+            <tr>
+              <td><code>wsl --list</code></td>
+              <td>List all installed Linux distributions</td>
+            </tr>
+            <tr>
+              <td><code>wsl --shutdown</code></td>
+              <td>Shut down all running distributions</td>
+            </tr>
+            <tr>
+              <td><code>wsl --update</code></td>
+              <td>Update WSL to the latest version</td>
+            </tr>
+            <tr>
+              <td><code>wsl --install -d &lt;distro&gt;</code></td>
+              <td>Install a different distribution (e.g., Debian, Kali)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top: 50px; color: var(--text);">Recommended VS Code Setup</h3>
+        <ol class="steps-list">
+          <li>
+            <strong>Install VS Code</strong>
+            <p>Download from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener" style="color: var(--brand);">code.visualstudio.com</a></p>
+          </li>
+          <li>
+            <strong>Install WSL Extension</strong>
+            <p>In VS Code, install the "WSL" extension by Microsoft. This lets you develop directly in WSL.</p>
+          </li>
+          <li>
+            <strong>Open Projects in WSL</strong>
+            <p>From WSL terminal, navigate to your project and type:</p>
+            <div class="code-block">code .</div>
+            <p>VS Code will open with full WSL integration!</p>
+          </li>
+        </ol>
+
+        <div class="note-box" style="margin-top: 30px;">
+          <strong>💡 Pro Tips:</strong>
+          <ul style="margin: 10px 0 0 20px;">
+            <li>Store your projects in WSL file system (<code>~/projects</code>) for better performance</li>
+            <li>Use Windows Terminal for a better command-line experience</li>
+            <li>Install zsh and oh-my-zsh for a prettier terminal</li>
+            <li>WSL 2 is automatically installed with <code>wsl --install</code> and offers the best performance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="container" style="text-align: center; padding: 40px 0;">
+      <a href="index.html" class="back-home">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </main>
+
+  <footer class="section" style="background: var(--panel); border-top: 1px solid var(--panel-border); padding: 40px 0; margin-top: 60px;">
+    <div class="container" style="text-align: center;">
+      <p style="margin: 0 0 10px; color: var(--muted);">Minnesota State University Moorhead</p>
+      <p style="margin: 0 0 20px; color: var(--text);">Association for Computing Machinery</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:msumacm@mnstate.edu" style="color: var(--brand); text-decoration: none;">msumacm@mnstate.edu</a>
+        <a href="https://discord.gg/GKy9htGXau" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">Discord</a>
+        <a href="https://github.com/the-Trio-JLZ" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js?v=1.0.3"></script>
+</body>
+</html>
