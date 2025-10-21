@@ -61,39 +61,81 @@
   "2024": {
     "members": [
       {
-        "name": "Alex Johnson",
+        "name": "Andrew Selvig",
         "role": "President",
-        "graduated": "Spring 2024",
+        "graduated": "Spring 2025",
         "major": "Computer Science"
       },
       {
-        "name": "Sarah Chen",
+        "name": "Laween Al-Sulaivany",
         "role": "Vice President",
-        "graduated": "Spring 2024",
-        "major": "Information Systems"
+        "graduated": "Spring 2026",
+        "major": "Computer Science"
       },
       {
-        "name": "Michael Rodriguez",
+        "name": "Dyson Mois",
         "role": "Treasurer",
-        "graduated": "Fall 2024",
-        "major": "Computer Science"
-      }
+        "graduated": "Spring 2025",
+        "major": "Computer Science & Cybersecurity"
+      },
+      {
+        "name": "Donovan Morse",
+        "role": "Secretary",
+        "graduated": "Spring 2026",
+        "major": "Cybersecurity"
+      },
+      {
+        "name": "Jacelynne Stachovich",
+        "role": "Marketer",
+        "graduated": "Spring 2026",
+        "major": "Psychology & Criminal Justice"
+      },
+        {
+            "name": "Zach Moore",
+            "role": "Webmaster",
+            "graduated": "Spring 2027",
+            "major": "Computer Science"
+        }
     ]
   },
   "2023": {
     "members": [
       {
-        "name": "Emily Thompson",
+        "name": "Judah Navas",
         "role": "President",
-        "graduated": "Spring 2023",
+        "graduated": "Spring 2025",
         "major": "Computer Science"
       },
       {
-        "name": "David Kim",
+        "name": "Andrew Selvig",
+        "role": "Vice President",
+        "graduated": "Spring 2025",
+        "major": "Computer Science"
+      },
+      {
+        "name": "Gudrun",
+        "role": "Treasurer",
+        "graduated": "Fall 2024",
+        "major": "Computer Science & Mathematics"
+      },
+      {
+        "name": "Kavi",
         "role": "Secretary",
-        "graduated": "Spring 2023",
+        "graduated": "Fall 2024",
         "major": "Cybersecurity"
-      }
+      },
+      {
+        "name": "Jacelynne Stachovich",
+        "role": "Marketer",
+        "graduated": "Spring 2026",
+        "major": "Psychology & Criminal Justice"
+      },
+        {
+            "name": "Tyler",
+            "role": "Webmaster",
+            "graduated": "Spring 2024",
+            "major": "Computer Science & Cybersecurity"
+        }
     ]
   }
 }
