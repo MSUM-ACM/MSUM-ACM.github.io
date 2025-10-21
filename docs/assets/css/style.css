@@ -36,6 +36,13 @@ h6 {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .logo-img {
@@ -154,11 +161,12 @@ h6 {
 }
 
 .btn-discord {
-  background: #5865F2;
+  background: #2d2d30;
+  border: 2px solid #5865F2;
 }
 
 .btn-discord:hover {
-  background: #4752C4;
+  background: #5865F2;
   box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
 }
 
@@ -523,6 +531,45 @@ h6 {
 
 .cta-section .btn {
   margin-top: 1rem;
+}
+
+/* Services section styling */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(224, 160, 47, 0.15);
+}
+
+.service-card h3 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-card .section-actions {
+  margin-top: 1.5rem;
 }
 
 /* Photo gallery styling */

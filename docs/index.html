@@ -15,18 +15,17 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="logo">
+      <a href="#hero" class="logo scroll-link">
         <img src="assets/img/ACM_Logo.svg" alt="MSUM ACM Logo" class="logo-img" />
         <span>MSUM ACM</span>
-      </div>
+      </a>
       <nav class="nav">
         <a href="#about" class="scroll-link">About</a>
         <a href="#board" class="scroll-link">Board</a>
         <a href="#events" class="scroll-link">Events</a>
         <a href="#git" class="scroll-link">Git</a>
         <a href="#research" class="scroll-link">Research</a>
-        <a href="#prints" class="scroll-link">3D Print</a>
-        <a href="#laptops" class="scroll-link">Laptop Borrowing</a>
+        <a href="#services" class="scroll-link">Services</a>
         <a href="#photos" class="scroll-link">Photos</a>
       </nav>
     </div>
@@ -136,6 +135,14 @@
             <h3>Innovation Hub</h3>
             <p>Got ideas that could change the world? Share your concepts and help shape the future of technology with fellow innovators.</p>
           </div>
+          <div class="research-item">
+            <h3>Competitive Programming</h3>
+            <p>Sharpen your coding skills through competitions and coding challenges. Train for hackathons and technical interviews together.</p>
+          </div>
+          <div class="research-item">
+            <h3>Workshop Series</h3>
+            <p>Lead or attend workshops on cutting-edge topics. Share your expertise and learn from peers in hands-on learning sessions.</p>
+          </div>
         </div>
         <div class="cta-section">
           <h3>Ready to start your research journey?</h3>
@@ -145,23 +152,34 @@
       </div>
     </section>
 
-    <section id="prints" class="section">
+    <section id="services" class="section">
       <div class="container">
-        <h2>3D Printing Services</h2>
-        <p class="section-subtitle">Transform your digital designs into physical reality</p>
-        <div class="section-actions">
-          <button id="openPrintForm" class="btn">Request a 3D Print</button>
-        </div>
-        <div id="printGallery" class="grid gallery"></div>
-      </div>
-    </section>
-
-    <section id="laptops" class="section">
-      <div class="container">
-        <h2>Laptop Borrowing Program</h2>
-        <p class="section-subtitle">Need reliable computing power for coursework, projects, or events? Our laptop borrowing program provides short-term access to quality laptops.</p>
-        <div class="section-actions">
-          <button onclick="window.open('https://forms.cloud.microsoft/r/RDBUVJEyvG', '_blank')" class="btn">Borrow a Laptop</button>
+        <h2>Our Services</h2>
+        <p class="section-subtitle">Supporting your academic and creative journey</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>3D Printing</h3>
+            <p>Transform your digital designs into physical reality. Whether it's prototypes, models, or creative projects, we'll help bring your ideas to life.</p>
+            <div class="section-actions">
+              <button id="openPrintForm" class="btn">Request a 3D Print</button>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <h3>Laptop Borrowing</h3>
+            <p>Need reliable computing power for coursework, projects, or events? Our laptop borrowing program provides short-term access to quality laptops.</p>
+            <div class="section-actions">
+              <button onclick="window.open('https://forms.cloud.microsoft/r/RDBUVJEyvG', '_blank')" class="btn">Borrow a Laptop</button>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <h3>Computer Clinic</h3>
+            <p>Free guidance on device issues! Get help with virus cleanup, maintenance, troubleshooting, and tech advice. Drop-in sessions every Tuesday, 12pm-2pm.</p>
+            <div class="section-actions">
+              <button onclick="window.open('https://forms.cloud.microsoft/r/RDBUVJEyvG', '_blank')" class="btn">Get Tech Help</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
