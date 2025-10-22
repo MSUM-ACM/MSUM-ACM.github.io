@@ -60,9 +60,10 @@
       advisorCard.innerHTML = `
         <div class="card-inner" style="background:var(--panel);border:2px solid var(--accent);border-radius:14px;padding:20px;margin-bottom:20px">
           <img src="${avatarUrl}" alt="${data.advisor.name}" style="width:120px;height:120px;border-radius:50%;margin:0 auto 15px;display:block;object-fit:cover" />
-          <h3 style="text-align:center;margin:0 0 5px;font-size:1.3em;color:var(--accent)">${data.advisor.name}</h3>
-          <p style="text-align:center;margin:0 0 15px;color:var(--muted);font-size:1.1em">${data.advisor.role} · ${data.advisor.years}</p>
-          <p style="margin-top:10px;text-align:center;color:var(--text)">${data.advisor.bio}</p>
+          <h3 style="text-align:center;margin:0 0 8px;font-size:1.4rem;color:var(--text);font-weight:600">${data.advisor.name}</h3>
+          <p style="text-align:center;margin:0 0 8px;color:var(--accent);font-size:1.1rem;font-weight:500">${data.advisor.role}</p>
+          <p style="text-align:center;margin:0 0 15px;color:var(--muted);font-size:1rem">${data.advisor.years}</p>
+          <p style="margin:0;text-align:center;color:var(--text);line-height:1.6">${data.advisor.bio}</p>
           <div style="text-align:center;margin-top:15px">
             <a href="${data.advisor.github_url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px">
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
@@ -94,12 +95,13 @@
       const socialLabel = isInstagram ? 'Instagram' : 'GitHub';
       
       card.innerHTML = `
-        <div class="card-inner" style="background:var(--panel);border:1px solid var(--panel-border);border-radius:14px;padding:14px;display:flex;flex-direction:column;height:100%">
-          <img src="${avatarUrl}" alt="${m.name}" style="width:100%;aspect-ratio:1/1;border-radius:10px;margin-bottom:10px;object-fit:cover" />
-          <strong style="color:var(--text)">${m.name}</strong><br/>
-          <span class="muted">${m.role} · ${m.years}</span>
-          <p style="margin-top:8px;color:var(--text);flex-grow:1">${m.bio}</p>
-          <div style="margin-top:10px;text-align:center">
+        <div class="card-inner" style="background:var(--panel);border:1px solid var(--panel-border);border-radius:14px;padding:14px;display:flex;flex-direction:column;height:100%;text-align:center">
+          <img src="${avatarUrl}" alt="${m.name}" style="width:100%;aspect-ratio:1/1;border-radius:10px;margin-bottom:12px;object-fit:cover" />
+          <h3 style="color:var(--text);margin:0 0 6px;font-size:1.25rem;font-weight:600">${m.name}</h3>
+          <p style="color:var(--brand);margin:0 0 6px;font-size:1rem;font-weight:500">${m.role}</p>
+          <p style="color:var(--muted);margin:0 0 12px;font-size:0.9rem">${m.years}</p>
+          <p style="margin:0;color:var(--text);flex-grow:1;line-height:1.6">${m.bio}</p>
+          <div style="margin-top:12px;text-align:center">
             <a href="${m.github_url}" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:none;display:inline-flex;align-items:center;gap:4px">
               ${socialIcon}
               ${socialLabel}
