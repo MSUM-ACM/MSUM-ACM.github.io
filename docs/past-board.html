@@ -210,8 +210,8 @@
     let boardHistory = {};
     let currentYear = null;
 
-    // Fetch board history data
-    fetch('data/board-history.json')
+    // Fetch board history data with cache busting
+    fetch(`data/board-history.json?v=${Date.now()}`)
       .then(response => response.json())
       .then(data => {
         boardHistory = data;
