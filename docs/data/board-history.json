@@ -131,10 +131,50 @@
         "major": "Psychology & Criminal Justice"
       },
         {
-            "name": "Tyler",
+            "name": "Tyler Sather",
             "role": "Webmaster",
             "graduated": "Spring 2024",
             "major": "Computer Science & Cybersecurity"
+        }
+    ]
+  },
+  "2022": {
+    "members": [
+      {
+        "name": "Christian O'Hara",
+        "role": "President",
+        "graduated": "Spring 2023",
+        "major": "Computer Science"
+      },
+      {
+        "name": "Judah Navas",
+        "role": "Vice President",
+        "graduated": "Spring 2025",
+        "major": "Computer Science"
+      },
+      {
+        "name": "Aaron Slettebak",
+        "role": "Treasurer",
+        "graduated": "Spring 2023",
+        "major": "Computer Science"
+      },
+      {
+        "name": "Andrew Selvig",
+        "role": "Secretary",
+        "graduated": "Spring 2025",
+        "major": "Computer Science"
+      },
+      {
+        "name": "Tyler Sather",
+        "role": "Webmaster",
+        "graduated": "Fall 2023",
+        "major": "Computer Science & Cybersecurity"
+      },
+        {
+            "name": "Aubree Schueler",
+            "role": "Webmaster",
+            "graduated": "Spring 2024",
+            "major": "Computer Science"
         }
     ]
   }
