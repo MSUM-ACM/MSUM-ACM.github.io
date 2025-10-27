@@ -136,6 +136,84 @@ h6 {
   outline-offset: 2px;
 }
 
+/* Container to anchor the submenu */
+.nav .has-submenu {
+  position: relative;
+  display: inline-flex; /* so spacing matches your anchors */
+  align-items: center;
+  /* padding-bottom: 2px; tiny cushion so borders touch cleanly */
+}
+
+/* Submenu panel */
+.submenu {
+  position: absolute;
+  top: 100%; /* keep attached to trigger */
+  left: 0;
+  min-width: 200px;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: #000; /* black panel */
+  border: 1px solid rgba(255,255,255,0.14); /* subtle light border on black */
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(255,255,255,0.10); /* small white shadow */
+  display: none;
+  z-index: 10;
+}
+
+/* Submenu items */
+.submenu li a {
+  display: block;
+  padding: 8px 12px;
+  color: #fff;
+  opacity: 1;                /* ensure full opacity in panel */
+  border-radius: 0;          /* flat items inside the panel */
+  transform: none;           /* disable lift effect in panel */
+}
+
+/* Don’t draw the gradient underline inside the dropdown */
+.submenu a::before { display: none; }
+
+/* Hover/keyboard show */
+.has-submenu:hover > .submenu,
+.has-submenu:focus-within > .submenu {
+  display: block;
+}
+
+/* Hover in submenu: soft white highlight, keep white text */
+.submenu li a:hover,
+.submenu li a:focus-visible {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  outline: none;
+}
+
+/* Cancel the hover "lift" on the trigger so there's no hover gap */
+.has-submenu > a:hover {
+  transform: none;
+}
+
+/* Keep the trigger flat while the submenu is open or focused */
+.has-submenu:hover > a,
+.has-submenu:focus-within > a {
+  transform: none;
+}
+
+/* Mobile: make submenu inline so it doesn't overflow */
+@media (max-width: 720px) {
+  .submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    display: none; /* still hidden until focus/hover */
+    padding: 4px 0;
+  }
+  .has-submenu:hover > .submenu,
+  .has-submenu:focus-within > .submenu {
+    display: block;
+  }
+}
+
 .btn {
   background: var(--brand);
   color: #fff;

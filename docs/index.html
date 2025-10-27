@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=0.13" />
+  <link rel="stylesheet" href="assets/css/style.css?v=0.17" />
 </head>
 <body>
   <header class="site-header">
@@ -21,10 +21,30 @@
       </a>
       <nav class="nav">
         <a href="#about" class="scroll-link">About</a>
-        <a href="#board" class="scroll-link">Board</a>
+        <div class="has-submenu">
+          <li class="has-submenu">
+            <a href="#board" class="scroll-link" aria-haspopup="true" aria-expanded="false">
+              Board
+            </a>
+            <ul class="submenu" aria-label="Research options">
+              <li><a href="past-board.html">Past Boards</a></li>
+              <!-- add more if you want later -->
+            </ul>
+          </li>
+        </div>
         <a href="#events" class="scroll-link">Events</a>
         <a href="#guides" class="scroll-link">Guides</a>
-        <a href="research.html">Research</a>
+        <div class="has-submenu">
+          <li class="has-submenu">
+            <a href="#research" class="scroll-link" aria-haspopup="true" aria-expanded="false">
+              Research
+            </a>
+            <ul class="submenu" aria-label="Research options">
+              <li><a href="research.html">Faculty Research page</a></li>
+              <!-- add more if you want later -->
+            </ul>
+          </li>
+        </div>
         <a href="#services" class="scroll-link">Services</a>
         <a href="#projects" class="scroll-link">Projects</a>
         <a href="#photos" class="scroll-link">Photos</a>
@@ -226,7 +246,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/app.js?v=1.0.2"></script>
+  <script src="assets/js/app.js?v=1.0.3"></script>
   <script src="assets/js/rss-parser.js?v=0.1"></script>
   <script src="assets/js/discord-widget.js?v=0.1"></script>
   <script src="assets/js/projects.js?v=1.0"></script>

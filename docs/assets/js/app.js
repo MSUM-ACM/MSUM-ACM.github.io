@@ -360,4 +360,15 @@
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
   });
+
+  const wrapper = document.querySelector('.has-submenu');
+  const trigger = wrapper?.querySelector('a[href="#research"]');
+  if (wrapper && trigger) {
+    wrapper.addEventListener('mouseenter', () => trigger.setAttribute('aria-expanded','true'));
+    wrapper.addEventListener('mouseleave', () => trigger.setAttribute('aria-expanded','false'));
+    wrapper.addEventListener('focusin',   () => trigger.setAttribute('aria-expanded','true'));
+    wrapper.addEventListener('focusout',  (e) => {
+      if (!wrapper.contains(e.relatedTarget)) trigger.setAttribute('aria-expanded','false');
+    });
+  }
 })();
