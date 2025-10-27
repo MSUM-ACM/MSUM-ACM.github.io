@@ -34,12 +34,9 @@
   document.getElementById('researchContactBtn')?.addEventListener('click', () => openExternalForm('contact'));
 
 
-  // Helper function to get avatar URL (uses UI Avatars API if no photo)
+  // Helper function to generate letter avatar using UI Avatars API
   function getAvatarUrl(name, photoUrl) {
-    if (photoUrl && !photoUrl.includes('placeholder.png')) {
-      return photoUrl;
-    }
-    // Generate UI Avatars URL with ACM brand color
+    // Always use UI Avatars with ACM brand color
     const encodedName = encodeURIComponent(name);
     return `https://ui-avatars.com/api/?name=${encodedName}&size=400&background=AF1329&color=fff&bold=true&font-size=0.45`;
   }
