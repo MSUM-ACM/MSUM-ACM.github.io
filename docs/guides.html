@@ -317,22 +317,21 @@
     <section id="server-guide" class="guide-section">
       <div class="container guide-content">
         <h2>MSUM Server Access Guide</h2>
-        <p class="section-subtitle">Connect to Smaug, Smoke, and Alduin for your CS courses</p>
+        <p class="section-subtitle">Connect to Smoke and Alduin for your CS courses</p>
         
         <p>MSUM provides three Linux servers for computer science students to develop and test server-side applications. These servers are essential for many CS courses including Server-Side Scripting, Network Programming, and Database courses.</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
-          <div style="background: var(--panel); padding: 20px; border-radius: 8px; text-align: center; border-top: 4px solid var(--accent);">
-            <h3 style="color: var(--accent); margin: 0 0 10px;">🐉 Smaug</h3>
-            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">smaug.cs.mnstate.edu</code>
-          </div>
+          
+          <!-- If you are reading this, smaug is an old linux system of MSUM. It was replaced by Smoke and Alduin. -->
+
           <div style="background: var(--panel); padding: 20px; border-radius: 8px; text-align: center; border-top: 4px solid var(--brand);">
             <h3 style="color: var(--brand); margin: 0 0 10px;">💨 Smoke</h3>
-            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">smoke.cs.mnstate.edu</code>
+            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">smoke.minnstate.edu</code>
           </div>
           <div style="background: var(--panel); padding: 20px; border-radius: 8px; text-align: center; border-top: 4px solid #6B4E71;">
             <h3 style="color: #6B4E71; margin: 0 0 10px;">🐲 Alduin</h3>
-            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">alduin.cs.mnstate.edu</code>
+            <code style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; display: inline-block;">alduin.minnstate.edu</code>
           </div>
         </div>
 
@@ -384,7 +383,7 @@
           <li>
             <strong>Connect to CS Servers</strong>
             <p>From the broker server, you can now SSH to any CS server:</p>
-            <div class="code-block"># Connect to Smaug<br>ssh smaug.cs.mnstate.edu<br><br># Or Smoke<br>ssh smoke.cs.mnstate.edu<br><br># Or Alduin<br>ssh alduin.cs.mnstate.edu</div>
+            <div class="code-block"># Connect to Smoke<br>ssh smoke.mnstate.edu<br><br># Or Alduin<br>ssh alduin.mnstate.edu</div>
             <p>Since you've set up SSH keys, you won't need a password!</p>
           </li>
         </ol>
@@ -397,7 +396,7 @@
 ssh StarID@broker.mnstate.edu<br>
 <br>
 # 2. From broker, connect to a CS server (no password needed)<br>
-ssh smaug.cs.mnstate.edu<br>
+ssh smoke.mnstate.edu<br>
 <br>
 # 3. Do your work on the server<br>
 # 4. When done, disconnect:<br>
