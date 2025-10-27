@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "CCVS - Comprehensive Code Verification System",
+      "description": "A comprehensive system for code verification and analysis. Collaborative project focused on improving code quality and security through automated verification.",
+      "github_url": "https://github.com/laween-alsulaivany/CCVS",
+      "author": "Laween Al-Sulaivany, Judah Nava, Donovan Morse, Ben Johnson, James Zook, Ugnius Bieliunas",
+      "tags": ["Security", "Code Analysis", "Team Project", "Python"],
+      "featured": true,
+      "date": "2024-12-01"
+    },
+    {
+      "id": 2,
+      "title": "Voice-Controlled LLM Assistant",
+      "description": "An intelligent voice-controlled assistant powered by Large Language Models. Features hands-free interaction and natural language processing for seamless user experience.",
+      "github_url": "https://github.com/laween-alsulaivany/Voice-Controlled-LLM-Assistant",
+      "author": "Laween Al-Sulaivany, Dyson Mois",
+      "tags": ["AI", "Voice Recognition", "LLM", "Python"],
+      "featured": true,
+      "date": "2024-11-15"
+    },
+    {
+      "id": 3,
+      "title": "Beating Dark Souls III with Reinforcement Learning",
+      "description": "Training an AI agent to defeat Iudex Gundyr in Dark Souls III using reinforcement learning techniques. Explores game AI and deep learning in challenging environments.",
+      "github_url": "https://github.com/laween-alsulaivany/Beating-Dark-Souls-III-Ludex-Gundyr-with-Reinforcement-Learning",
+      "author": "Laween Al-Sulaivany, Zach Moore, Ben Johnson, Maxwell Sheridan, Shadrak Kumi",
+      "tags": ["Machine Learning", "Reinforcement Learning", "Gaming", "Python", "AI"],
+      "featured": true,
+      "date": "2024-10-20"
+    },
+    {
+      "id": 4,
+      "title": "Notes Summarizer",
+      "description": "Automatically summarize lecture notes and study materials using natural language processing. Helps students quickly review and understand key concepts from lengthy documents.",
+      "github_url": "https://github.com/JoshuaFadase/Notes-Summarizer",
+      "author": "Joshua Fadase",
+      "tags": ["NLP", "Education", "Python", "AI"],
+      "featured": false,
+      "date": "2024-09-30"
+    },
+    {
+      "id": 5,
+      "title": "splongleOS",
+      "description": "A custom operating system built from scratch. Explores low-level system programming, kernel development, and operating system architecture.",
+      "github_url": "https://github.com/applesauce3535/splongleOS",
+      "author": "Ben Johnson",
+      "tags": ["Operating Systems", "C", "Low-Level", "System Programming"],
+      "featured": false,
+      "date": "2024-09-15"
+    },
+    {
+      "id": 6,
+      "title": "TinyNetUse",
+      "description": "Lightweight network utility tool for monitoring and analyzing network traffic. Designed for simplicity and efficiency in network diagnostics.",
+      "github_url": "https://github.com/laween-alsulaivany/TinyNetUse",
+      "author": "Laween Al-Sulaivany",
+      "tags": ["Networking", "Python", "CLI Tool"],
+      "featured": false,
+      "date": "2024-08-25"
+    },
+    {
+      "id": 7,
+      "title": "reqwatcher",
+      "description": "Monitor and track HTTP requests in real-time. Useful for debugging web applications, API testing, and understanding network behavior.",
+      "github_url": "https://github.com/laween-alsulaivany/reqwatcher",
+      "author": "Laween Al-Sulaivany",
+      "tags": ["Web Development", "Python", "Debugging", "Networking"],
+      "featured": false,
+      "date": "2024-07-10"
+    },
+    {
+      "id": 8,
+      "title": "Sudoku Solver",
+      "description": "Efficient sudoku puzzle solver using advanced algorithms. Features backtracking and constraint propagation for fast puzzle resolution.",
+      "github_url": "https://github.com/laween-alsulaivany/sudoku_solver",
+      "author": "Laween Al-Sulaivany",
+      "tags": ["Algorithms", "Python", "Puzzle Solving"],
+      "featured": false,
+      "date": "2024-06-18"
+    }
+  ]
+}

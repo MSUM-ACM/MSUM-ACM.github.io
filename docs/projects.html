@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Projects - MSUM ACM</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/ACM_Logo.svg" />
+  <link rel="alternate icon" type="image/png" href="assets/img/ACM_Logo.png" />
+  <!-- Google Fonts: Inter (primary) & Poppins (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=0.14" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html#hero" class="logo">
+        <img src="assets/img/ACM_Logo.svg" alt="MSUM ACM Logo" class="logo-img" />
+        <span>MSUM ACM</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#board">Board</a>
+        <a href="index.html#events">Events</a>
+        <a href="index.html#guides">Guides</a>
+        <a href="research.html">Research</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#photos">Photos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-small">
+      <div class="container hero-inner">
+        <h1>Student Projects</h1>
+        <p class="hero-subtitle">Explore the amazing projects built by ACM members</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Search and Filter Controls -->
+        <div class="projects-controls">
+          <div class="search-box">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input type="text" id="projectSearch" placeholder="Search projects by name, description, or author..." />
+          </div>
+          
+          <div class="projects-filters">
+            <label for="sortBy">Sort by:</label>
+            <select id="sortBy">
+              <option value="date-desc">Newest First</option>
+              <option value="date-asc">Oldest First</option>
+              <option value="name-asc">Name (A-Z)</option>
+              <option value="name-desc">Name (Z-A)</option>
+              <option value="stars-desc">Most Stars</option>
+            </select>
+            
+            <label for="filterTag">Filter by tag:</label>
+            <select id="filterTag">
+              <option value="all">All Tags</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Projects Display Stats -->
+        <div class="projects-stats">
+          <p id="projectsCount">Loading projects...</p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="allProjects" class="projects-grid"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+          <h3>No projects found</h3>
+          <p>Try adjusting your search or filter criteria.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CC 2025 · MSUM ACM</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/projects.js?v=1.0"></script>
+</body>
+</html>
