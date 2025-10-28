@@ -371,4 +371,40 @@
       if (!wrapper.contains(e.relatedTarget)) trigger.setAttribute('aria-expanded','false');
     });
   }
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      const isActive = nav.classList.contains('active');
+      menuToggle.setAttribute('aria-expanded', isActive);
+      menuToggle.innerHTML = isActive ? '✕' : '☰';
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking nav links
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '☰';
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !menuToggle.contains(e.target) && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '☰';
+        document.body.style.overflow = '';
+      }
+    });
+  }
 })();

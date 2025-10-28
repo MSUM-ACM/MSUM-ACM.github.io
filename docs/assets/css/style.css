@@ -136,6 +136,113 @@ h6 {
   outline-offset: 2px;
 }
 
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: var(--brand);
+}
+
+.menu-toggle:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 65px;
+    right: -100%;
+    width: 280px;
+    max-width: 85%;
+    height: calc(100vh - 65px);
+    background: rgba(28, 29, 31, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    gap: 0;
+    padding: 1.5rem 0;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    border-left: 1px solid rgba(175, 19, 41, 0.3);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .nav.active {
+    right: 0;
+  }
+  
+  .nav > a,
+  .nav > .has-submenu,
+  .nav > div {
+    width: 100%;
+  }
+  
+  .nav a {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+  }
+  
+  .nav a:hover {
+    background: rgba(175, 19, 41, 0.15);
+    transform: translateX(-4px);
+  }
+  
+  .nav a::before {
+    display: none;
+  }
+  
+  /* Mobile submenu styles */
+  .nav .has-submenu {
+    display: block;
+    width: 100%;
+  }
+  
+  .nav .has-submenu > li {
+    display: block;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .submenu {
+    position: static;
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .submenu li {
+    width: 100%;
+  }
+  
+  .submenu li a {
+    padding: 0.75rem 1.5rem 0.75rem 2.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+}
+
 /* Container to anchor the submenu */
 .nav .has-submenu {
   position: relative;
@@ -992,17 +1099,12 @@ textarea {
     grid-template-columns: 1fr
   }
 
-  .nav {
-    flex-direction: column;
-    gap: 8px
-  }
-
   .hero-inner h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .hero-inner p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .hero-actions {
@@ -1014,6 +1116,14 @@ textarea {
   .hero-actions .btn {
     width: 100%;
     max-width: 280px;
+  }
+  
+  .site-header .container {
+    padding: 12px 16px;
+  }
+  
+  .logo-img {
+    height: 32px;
   }
 }
 
