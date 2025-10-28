@@ -89,6 +89,46 @@
       "tags": ["Algorithms", "Python", "Puzzle Solving"],
       "featured": false,
       "date": "2024-06-18"
+    },
+    {
+      "id": 10,
+      "title": "React App Backend",
+      "description": "Backend server for a React application. Provides RESTful API endpoints and handles server-side logic for the frontend interface.",
+      "github_url": "https://github.com/Shadrackkumi07/React-App-Backend",
+      "author": "Shadrack Kumi",
+      "tags": ["Backend", "React", "API", "Node.js"],
+      "featured": false,
+      "date": "2024-05-20"
+    },
+    {
+      "id": 11,
+      "title": "React App Frontend",
+      "description": "Modern frontend application built with React. Features responsive design and dynamic user interface components.",
+      "github_url": "https://github.com/Shadrackkumi07/React-App-FrontEnd",
+      "author": "Shadrack Kumi",
+      "tags": ["Frontend", "React", "JavaScript", "Web Development"],
+      "featured": false,
+      "date": "2024-05-15"
+    },
+    {
+      "id": 12,
+      "title": "NBA Ticketing Renewal Optimization Dashboard",
+      "description": "Data analytics dashboard for optimizing NBA season ticket renewals. Analyzes customer behavior and provides insights for retention strategies.",
+      "github_url": "https://github.com/Shadrackkumi07/NBA-Ticketing-Renewal-Optimization-Report-Dashboard",
+      "author": "Shadrack Kumi",
+      "tags": ["Data Analytics", "Dashboard", "Sports Analytics", "Visualization"],
+      "featured": false,
+      "date": "2024-04-10"
+    },
+    {
+      "id": 13,
+      "title": "2025 Miami HEAT Data Analyst Challenge",
+      "description": "Analytics project for the Miami HEAT data analyst challenge. Explores sports data analysis, player performance metrics, and strategic insights.",
+      "github_url": "https://github.com/Shadrackkumi07/2025-Miami-HEAT-Data-Analyst-Challenge",
+      "author": "Shadrack Kumi",
+      "tags": ["Data Science", "Sports Analytics", "Python", "Statistics"],
+      "featured": false,
+      "date": "2024-03-25"
     }
   ]
 }
