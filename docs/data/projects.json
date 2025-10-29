@@ -7,7 +7,7 @@
       "github_url": "https://github.com/laween-alsulaivany/CCVS",
       "author": "Laween Al-Sulaivany, Judah Nava, Donovan Morse, Ben Johnson, James Zook, Ugnius Bieliunas",
       "tags": ["Security", "Code Analysis", "Team Project", "Python"],
-      "featured": true,
+      "featured": false,
       "date": "2024-12-01"
     },
     {
@@ -17,7 +17,7 @@
       "github_url": "https://github.com/laween-alsulaivany/Voice-Controlled-LLM-Assistant",
       "author": "Laween Al-Sulaivany, Dyson Mois",
       "tags": ["AI", "Voice Recognition", "LLM", "Python"],
-      "featured": true,
+      "featured": false,
       "date": "2024-11-15"
     },
     {
@@ -47,7 +47,7 @@
       "github_url": "https://github.com/applesauce3535/splongleOS",
       "author": "Ben Johnson",
       "tags": ["Operating Systems", "C", "Low-Level", "System Programming"],
-      "featured": false,
+      "featured": true,
       "date": "2024-09-15"
     },
     {
@@ -57,7 +57,7 @@
       "github_url": "https://github.com/Qb7354vm/Advance-ARP-Network_scanner",
       "author": "Fransly Dutervil",
       "tags": ["Networking", "Security", "Python", "ARP"],
-      "featured": false,
+      "featured": true,
       "date": "2024-09-10"
     },
     {
@@ -129,6 +129,16 @@
       "tags": ["Data Science", "Sports Analytics", "Python", "Statistics"],
       "featured": false,
       "date": "2024-03-25"
+    },
+    {
+      "id": 14,
+      "title": "Voice Journal",
+      "description": "Voice Journal is a journal app that records users and transcribes their words into text then stores the text as entries. It is mainly by scientists or journalists to keep track of progress on a project more seamlessly.",
+      "github_url": "https://github.com/JoshuaFadase/Voice-Journal",
+      "author": "Joshua Fadase",
+      "tags": ["Productivity", "Voice Recognition", "Transcription", "Python"],
+      "featured": false,
+      "date": "2025-10-28"
     }
   ]
 }
