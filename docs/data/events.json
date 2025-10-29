@@ -1,23 +1,6 @@
 {
-  "lastUpdated": "2025-10-28T12:26:57.050095+00:00",
-  "totalEvents": 1,
-  "events": [
-    {
-      "key": "b9245f85381a6124",
-      "title": "ACM Microcontroller Workshop",
-      "link": "https://mnstate.campuslabs.com/engage/event/11829425",
-      "description": "ACM Microcontroller Workshop Curious about electronics? Want your code to have an effect outside your computer screen? Come to ACM's Microcontroller Workshop! Learn to control lights, sounds, displays, motors, and more at this event using Python. Join and/or leave anytime during this event. All s...",
-      "author": "Association for Computing Machinery",
-      "host": "Association for Computing Machinery",
-      "pubDate": "Mon, 27 Oct 2025 18:20:02 GMT",
-      "start": "Mon, 27 Oct 2025 18:20:02 GMT",
-      "end": "",
-      "location": "TBA",
-      "categories": [
-        "ThoughtfulLearning"
-      ],
-      "fetched_at": "2025-10-27T18:20:02.659759+00:00"
-    }
-  ],
+  "lastUpdated": "2025-10-29T01:04:45.639978+00:00",
+  "totalEvents": 0,
+  "events": [],
   "message": "Events automatically updated by GitHub Actions every 6 hours"
 }
