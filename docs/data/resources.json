@@ -1,0 +1,31 @@
+{
+  "resources": [
+    {
+      "id": 1,
+      "title": "Student Discounts",
+      "description": "Comprehensive spreadsheet of tech-related student discounts. Includes software, subscriptions, hardware, and cloud services available to students.",
+      "url": "https://docs.google.com/spreadsheets/d/1S3LjMg69N-DWROUJkx3ha2ebmbCLggNdzm466CmQMKw/edit?gid=729853786#gid=729853786",
+      "category": "Discounts",
+      "icon": "tag",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Coding Interview University",
+      "description": "Complete computer science study plan to become a software engineer. Multi-month study plan for going from web developer to software engineer at a large company.",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "category": "Learning",
+      "icon": "book",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Developer Roadmap",
+      "description": "Interactive roadmaps, guides and educational content to help developers pick up a path and guide their learnings. Covers frontend, backend, DevOps, and more.",
+      "url": "https://github.com/kamranahmedse/developer-roadmap",
+      "category": "Career",
+      "icon": "map",
+      "featured": true
+    }
+  ]
+}

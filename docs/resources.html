@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developer Resources - MSUM ACM</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/ACM_Logo.svg" />
+  <link rel="alternate icon" type="image/png" href="assets/img/ACM_Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/ACM_Logo.svg" alt="MSUM ACM Logo" class="logo-img" />
+        <span>MSUM ACM</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#board">Board</a>
+        <a href="index.html#events">Events</a>
+        <a href="guides.html">Guides</a>
+        <a href="research.html">Research</a>
+        <a href="index.html#services">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="resources.html">Resources</a>
+        <a href="index.html#photos">Photos</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-small">
+    <div class="container" style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+      <h1 style="font-size: 3.5rem; margin: 0 0 1rem; background: linear-gradient(135deg, var(--accent) 0%, var(--brand) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Developer Resources</h1>
+      <p style="font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0;">Curated resources to accelerate your learning and career. From student discounts to comprehensive learning paths and interview preparation guides.</p>
+    </div>
+  </section>
+
+  <main class="section" style="padding-top: 60px;">
+    <div class="container">
+      <div id="allResources" class="resources-grid">
+        <!-- Resources loaded dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="section" style="background: var(--panel); border-top: 1px solid var(--panel-border); padding: 40px 0; margin-top: 60px;">
+    <div class="container" style="text-align: center;">
+      <p style="margin: 0 0 10px; color: var(--muted);">Minnesota State University Moorhead</p>
+      <p style="margin: 0 0 20px; color: var(--text);">Association for Computing Machinery</p>
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:msumacm@mnstate.edu" style="color: var(--brand); text-decoration: none;">msumacm@mnstate.edu</a>
+        <a href="https://discord.gg/GKy9htGXau" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">Discord</a>
+        <a href="https://github.com/the-Trio-JLZ" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/resources.js"></script>
+  <script src="assets/js/discord-widget.js?v=0.1"></script>
+</body>
+</html>

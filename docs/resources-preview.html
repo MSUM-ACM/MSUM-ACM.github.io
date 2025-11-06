@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resources Preview - MSUM ACM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=0.14" />
+  <style>
+    .preview-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .preview-header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 40px;
+      background: var(--panel);
+      border-radius: 12px;
+      border: 2px solid var(--accent);
+    }
+    
+    .preview-header h1 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    
+    .preview-section {
+      margin-bottom: 80px;
+      padding: 40px;
+      background: var(--bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+    }
+    
+    .preview-section h2 {
+      color: var(--brand);
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--brand);
+    }
+    
+    .preview-label {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    /* Option 1: Card Grid Layout */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    
+    .resource-card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .resource-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(224, 160, 47, 0.15);
+    }
+    
+    .resource-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--accent), var(--brand));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+    
+    .resource-card h3 {
+      color: var(--accent);
+      font-size: 1.3em;
+      margin: 0 0 12px;
+    }
+    
+    .resource-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 16px;
+      background: rgba(175, 19, 41, 0.1);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      margin-top: auto;
+    }
+    
+    .resource-link:hover {
+      background: var(--brand);
+      color: white;
+    }
+
+    /* Option 2: List Layout */
+    .resources-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    
+    .resource-item {
+      background: var(--panel);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .resource-item:hover {
+      border-left-color: var(--brand);
+      transform: translateX(8px);
+      box-shadow: 0 4px 16px rgba(175, 19, 41, 0.1);
+    }
+    
+    .resource-item-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent), var(--brand));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    
+    .resource-item-content {
+      flex-grow: 1;
+    }
+    
+    .resource-item h3 {
+      color: var(--text);
+      font-size: 1.4em;
+      margin: 0 0 8px;
+    }
+    
+    .resource-item p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+    
+    .resource-item a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+    
+    .resource-item a:hover {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+
+    /* Option 3: Compact List with Tags */
+    .compact-resources {
+      margin-top: 20px;
+    }
+    
+    .compact-resource {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .compact-resource:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(224, 160, 47, 0.1);
+    }
+    
+    .compact-resource-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    
+    .compact-resource-emoji {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    
+    .compact-resource-title {
+      flex-grow: 1;
+    }
+    
+    .compact-resource h3 {
+      color: var(--text);
+      margin: 0 0 6px;
+      font-size: 1.2em;
+    }
+    
+    .compact-resource p {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+      font-size: 0.95em;
+    }
+    
+    .resource-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    
+    .resource-tag {
+      background: rgba(224, 160, 47, 0.15);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.8em;
+      font-weight: 500;
+    }
+    
+    .compact-resource a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9em;
+      margin-top: 12px;
+    }
+    
+    .compact-resource a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .resource-item {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-container">
+    <div class="preview-header">
+      <h1>🎨 Resources Section Preview</h1>
+      <p style="color: var(--muted); margin: 10px 0 0;">Three different layout options for adding external resources</p>
+    </div>
+
+    <!-- OPTION 1: Card Grid Layout -->
+    <div class="preview-section">
+      <span class="preview-label">OPTION 1</span>
+      <h2>Card Grid Layout (Modern & Visual)</h2>
+      
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">💰</div>
+          <h3>Student Discounts</h3>
+          <p>Comprehensive spreadsheet of tech-related student discounts. Includes software, subscriptions, hardware, and cloud services available to students.</p>
+          <a href="https://docs.google.com/spreadsheets/d/1S3LjMg69N-DWROUJkx3ha2ebmbCLggNdzm466CmQMKw/edit?gid=729853786#gid=729853786" target="_blank" class="resource-link">
+            View Spreadsheet
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">📚</div>
+          <h3>Coding Interview University</h3>
+          <p>Complete computer science study plan to become a software engineer. Multi-month study plan for going from web developer to software engineer at a large company.</p>
+          <a href="https://github.com/jwasham/coding-interview-university" target="_blank" class="resource-link">
+            View on GitHub
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">🗺️</div>
+          <h3>Developer Roadmap</h3>
+          <p>Interactive roadmaps, guides and educational content to help developers pick up a path and guide their learnings. Covers frontend, backend, DevOps, and more.</p>
+          <a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank" class="resource-link">
+            View on GitHub
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 2: List Layout -->
+    <div class="preview-section">
+      <span class="preview-label">OPTION 2</span>
+      <h2>List Layout (Information Dense)</h2>
+      
+      <ul class="resources-list">
+        <li class="resource-item">
+          <div class="resource-item-icon">💰</div>
+          <div class="resource-item-content">
+            <h3>Student Discounts Spreadsheet</h3>
+            <p>Comprehensive, mostly up-to-date spreadsheet of tech-related student discounts. Includes software (IDEs, design tools), subscriptions (cloud services, learning platforms), hardware discounts, and more. Essential resource for students looking to save money on development tools.</p>
+            <a href="https://docs.google.com/spreadsheets/d/1S3LjMg69N-DWROUJkx3ha2ebmbCLggNdzm466CmQMKw/edit?gid=729853786#gid=729853786" target="_blank">
+              → Open Spreadsheet
+            </a>
+          </div>
+        </li>
+
+        <li class="resource-item">
+          <div class="resource-item-icon">📚</div>
+          <div class="resource-item-content">
+            <h3>Coding Interview University</h3>
+            <p>A complete computer science study plan by John Washam to become a software engineer. This multi-month study plan covers algorithms, data structures, system design, and everything you need to transition from web developer to software engineer at companies like Google, Amazon, or Microsoft.</p>
+            <a href="https://github.com/jwasham/coding-interview-university" target="_blank">
+              → View on GitHub (250k+ ⭐)
+            </a>
+          </div>
+        </li>
+
+        <li class="resource-item">
+          <div class="resource-item-icon">🗺️</div>
+          <div class="resource-item-content">
+            <h3>Developer Roadmap</h3>
+            <p>Interactive roadmaps, guides and educational content to help developers pick up the right path and guide their learnings. Includes detailed roadmaps for Frontend, Backend, DevOps, Full Stack, Computer Science, and more. Perfect for planning your learning journey.</p>
+            <a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank">
+              → View on GitHub (290k+ ⭐)
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- OPTION 3: Compact with Tags -->
+    <div class="preview-section">
+      <span class="preview-label">OPTION 3</span>
+      <h2>Compact Layout with Tags (Space Efficient)</h2>
+      
+      <div class="compact-resources">
+        <div class="compact-resource">
+          <div class="compact-resource-header">
+            <span class="compact-resource-emoji">💰</span>
+            <div class="compact-resource-title">
+              <h3>Student Discounts Spreadsheet</h3>
+              <p>Mostly up-to-date collection of tech-related student discounts for software, cloud services, and hardware.</p>
+            </div>
+          </div>
+          <div class="resource-tags">
+            <span class="resource-tag">Discounts</span>
+            <span class="resource-tag">Students</span>
+            <span class="resource-tag">Software</span>
+            <span class="resource-tag">Cloud Services</span>
+          </div>
+          <a href="https://docs.google.com/spreadsheets/d/1S3LjMg69N-DWROUJkx3ha2ebmbCLggNdzm466CmQMKw/edit?gid=729853786#gid=729853786" target="_blank">
+            Open Spreadsheet →
+          </a>
+        </div>
+
+        <div class="compact-resource">
+          <div class="compact-resource-header">
+            <span class="compact-resource-emoji">📚</span>
+            <div class="compact-resource-title">
+              <h3>Coding Interview University</h3>
+              <p>Multi-month study plan covering algorithms, data structures, and system design for software engineering interviews.</p>
+            </div>
+          </div>
+          <div class="resource-tags">
+            <span class="resource-tag">Algorithms</span>
+            <span class="resource-tag">Data Structures</span>
+            <span class="resource-tag">System Design</span>
+            <span class="resource-tag">Interview Prep</span>
+          </div>
+          <a href="https://github.com/jwasham/coding-interview-university" target="_blank">
+            View on GitHub (250k+ ⭐) →
+          </a>
+        </div>
+
+        <div class="compact-resource">
+          <div class="compact-resource-header">
+            <span class="compact-resource-emoji">🗺️</span>
+            <div class="compact-resource-title">
+              <h3>Developer Roadmap</h3>
+              <p>Interactive roadmaps and guides for Frontend, Backend, DevOps, and Full Stack development paths.</p>
+            </div>
+          </div>
+          <div class="resource-tags">
+            <span class="resource-tag">Roadmaps</span>
+            <span class="resource-tag">Frontend</span>
+            <span class="resource-tag">Backend</span>
+            <span class="resource-tag">DevOps</span>
+            <span class="resource-tag">Career Planning</span>
+          </div>
+          <a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank">
+            View on GitHub (290k+ ⭐) →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--panel); border-radius: 12px;">
+      <h2 style="color: var(--accent); margin-bottom: 15px;">Which layout do you prefer?</h2>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto;">
+        <strong>Option 1 (Card Grid)</strong> - Modern, visual, great for featured resources<br>
+        <strong>Option 2 (List)</strong> - More detailed descriptions, professional feel<br>
+        <strong>Option 3 (Compact)</strong> - Space-efficient, easy to scan, good for many items
+      </p>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js?v=1.0.3"></script>
+  <script src="assets/js/discord-widget.js?v=0.1"></script>
+</body>
+</html>
