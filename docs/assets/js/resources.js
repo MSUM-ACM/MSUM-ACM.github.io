@@ -19,7 +19,7 @@
       .then(response => response.json())
       .then(data => {
         const featured = data.resources.filter(r => r.featured);
-        container.innerHTML = featured.map(resource => createResourceCard(resource)).join('');
+        container.innerHTML = featured.map(resource => createResourceCard(resource, false)).join('');
       })
       .catch(error => {
         console.error('Error loading resources:', error);
@@ -35,7 +35,7 @@
     fetch('data/resources.json')
       .then(response => response.json())
       .then(data => {
-        container.innerHTML = data.resources.map(resource => createResourceCard(resource)).join('');
+        container.innerHTML = data.resources.map(resource => createResourceCard(resource, true)).join('');
       })
       .catch(error => {
         console.error('Error loading resources:', error);
@@ -44,14 +44,12 @@
   }
 
   // Create resource card HTML
-  function createResourceCard(resource) {
+  function createResourceCard(resource, showIcon = false) {
     const icon = icons[resource.icon] || icons.book;
     
     return `
       <div class="resource-card">
-        <div class="resource-icon">
-          ${icon}
-        </div>
+        ${showIcon ? `<div class="resource-icon">${icon}</div>` : ''}
         <div class="resource-category">${resource.category}</div>
         <h3>${resource.title}</h3>
         <p>${resource.description}</p>

@@ -1626,8 +1626,8 @@ img {
 .resource-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 2rem;
+  border-radius: 12px;
+  padding: 1.5rem;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -1660,15 +1660,15 @@ img {
 }
 
 .resource-icon {
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, rgba(224, 160, 47, 0.15), rgba(175, 19, 41, 0.15));
   border: 2px solid rgba(224, 160, 47, 0.3);
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -1679,15 +1679,15 @@ img {
 }
 
 .resource-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   color: var(--accent);
 }
 
 .resource-card h3 {
   color: var(--text);
-  font-size: 1.4rem;
-  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
   font-weight: 600;
   line-height: 1.3;
 }
