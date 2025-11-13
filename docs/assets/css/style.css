@@ -1007,14 +1007,14 @@ textarea {
   padding: 40px 20px
 }
 
-.no-events a,
-.error-message a {
+.no-events a:not(.btn),
+.error-message a:not(.btn) {
   color: var(--brand);
   text-decoration: none
 }
 
-.no-events a:hover,
-.error-message a:hover {
+.no-events a:not(.btn):hover,
+.error-message a:not(.btn):hover {
   text-decoration: underline
 }
 
