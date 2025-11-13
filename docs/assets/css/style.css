@@ -131,6 +131,17 @@ h6 {
   width: 80%;
 }
 
+.nav a.active {
+  opacity: 1;
+  color: var(--brand);
+  background: rgba(175, 19, 41, 0.12);
+  font-weight: 600;
+}
+
+.nav a.active::before {
+  width: 80%;
+}
+
 .nav a:focus {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
