@@ -26,6 +26,33 @@
       "category": "Career",
       "icon": "map",
       "featured": true
+    },
+    {
+      "id": 4,
+      "title": "2026 SWE College Jobs",
+      "description": "Curated list of full-time software engineering positions for new college graduates in 2026. Regularly updated with new opportunities and application deadlines.",
+      "url": "https://github.com/speedyapply/2026-SWE-College-Jobs",
+      "category": "Career",
+      "icon": "map",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Summer 2026 Internships (vanshb03)",
+      "description": "Comprehensive collection of summer 2026 tech internship opportunities. Includes application links, deadlines, and location information for various companies.",
+      "url": "https://github.com/vanshb03/Summer2026-Internships",
+      "category": "Career",
+      "icon": "map",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Summer 2026 Internships (SimplifyJobs)",
+      "description": "Maintained by SimplifyJobs, this repository tracks summer 2026 tech internship postings with quick apply links and regular updates.",
+      "url": "https://github.com/SimplifyJobs/Summer2026-Internships",
+      "category": "Career",
+      "icon": "map",
+      "featured": false
     }
   ]
 }
