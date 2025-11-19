@@ -4,7 +4,7 @@ Official website for the Minnesota State University Moorhead Association for Com
 
 ## Live Site
 
-**Production**: [msum-acm.github.io](msum-acm.github.io)
+**Production**: [msum-acm.github.io](https://msum-acm.github.io/)
 
 ## Features
 
