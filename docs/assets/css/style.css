@@ -376,6 +376,17 @@ h6 {
   box-shadow: 0 6px 20px rgba(175, 19, 41, 0.4);
 }
 
+.btn-github {
+  background: #2d2d30;
+  border: 2px solid #835da2;
+}
+
+.btn-github:hover {
+  background: #835da2;
+  border-color: #835da2;
+  box-shadow: 0 6px 20px rgba(225, 228, 232, 0.3);
+}
+
 .btn-alt {
   background: #2a2a32;
 }
