@@ -1,6 +1,23 @@
 {
-  "lastUpdated": "2025-11-19T18:20:10.258381+00:00",
-  "totalEvents": 0,
-  "events": [],
+  "lastUpdated": "2025-11-19T20:38:02.146383+00:00",
+  "totalEvents": 1,
+  "events": [
+    {
+      "key": "d622f20fcf6a2d8e",
+      "title": "Dungeons and Dragons Night",
+      "link": "https://mnstate.campuslabs.com/engage/event/11902201",
+      "description": "Dungeons and Dragons Night Come down to bridges 164 at 6:30 this Thursday to enjoy some free snacks and DND! From Thursday, November 20, 2025 6:30 PM to 8:30 PM CST at Bridges 164.",
+      "author": "Association for Computing Machinery",
+      "host": "Association for Computing Machinery",
+      "pubDate": "Wed, 19 Nov 2025 20:38:02 GMT",
+      "start": "Wed, 19 Nov 2025 20:38:02 GMT",
+      "end": "",
+      "location": "TBA",
+      "categories": [
+        "Social"
+      ],
+      "fetched_at": "2025-11-19T20:38:02.146383+00:00"
+    }
+  ],
   "message": "Events automatically updated by GitHub Actions every 6 hours"
 }
