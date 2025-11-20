@@ -52,9 +52,9 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          git pull --rebase origin main
           git add docs/data/events.json
           git commit -m "🤖 Auto-update ACM events from Dragon Central"
+          git pull --rebase origin main
           git push
       
       - name: Report status
