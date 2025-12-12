@@ -1,23 +1,6 @@
 {
-  "lastUpdated": "2025-12-11T18:20:09.152514+00:00",
-  "totalEvents": 1,
-  "events": [
-    {
-      "key": "89b3c44cd7de206e",
-      "title": "ACM Finals Escape Event",
-      "link": "https://mnstate.campuslabs.com/engage/event/11931728",
-      "description": "ACM Finals Escape Event We&rsquo;re wrapping up the semester with a relaxed end-of-year hangout before finals hit. There&rsquo;ll be food, desserts, games, and most importantly, ACM board elections. If you've been thinking about getting involved or taking on a leadership role next semester, this ...",
-      "author": "Association for Computing Machinery",
-      "host": "Association for Computing Machinery",
-      "pubDate": "Thu, 04 Dec 2025 18:22:31 GMT",
-      "start": "Thu, 04 Dec 2025 18:22:31 GMT",
-      "end": "",
-      "location": "TBA",
-      "categories": [
-        "Social"
-      ],
-      "fetched_at": "2025-12-04T18:22:31.511838+00:00"
-    }
-  ],
+  "lastUpdated": "2025-12-12T01:07:55.763105+00:00",
+  "totalEvents": 0,
+  "events": [],
   "message": "Events automatically updated by GitHub Actions every 6 hours"
 }
